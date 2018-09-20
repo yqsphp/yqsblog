@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+
+   RewriteCond %{REQUEST_METHOD} ^TRACE
+   RewriteRule .* - [F]
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+</IfModule>
