@@ -1,0 +1,47 @@
+<include file="Public/header"/>
+<!--从微信服务器获取的图片需添加如下头-->
+<meta name="referrer" content="no-referrer" />
+<!---->
+<style type="text/css">
+	.media-title{background: rgba(0,0,0,.4); color: white; width: 100%;}
+	.delete{background: rgba(0,0,0,.4); text-align:right; color: white; cursor: pointer; width: 100%;}
+	.img-width{width: 100%; max-height: 200px;}
+</style>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 素材详情</strong>
+	</div>
+	<div class="panel-body">
+		<volist name="info" id="v">
+		<div class="col-sm-3">
+			<!--<div class="delete padding-small" data-href="<{:U('source_del',['type'=>1,'wechat_id'=>$wechat_id,'id'=>$v['id'],'media_id'=>$v['media_id']])}>">
+				<i class="icon-trash-o"></i>
+			</div>-->
+			<if condition="empty($v['url'])">
+			<img class="img-thumbnail img-width" src="<{$v.thumb_url}>"/>	
+			<else />
+			<a href="<{$v.url}>" target="_blank"><img class="img-thumbnail img-width" src="<{$v.thumb_url}>"/></a>				
+			</if>
+			<div class="padding media-title">
+				<{$v.title}>
+			</div>
+		</div>
+		</volist>
+	</div>
+	<a class="button border-main icon-backward" href="javascript:" onclick="history.back()"> 返回</a>
+</div>
+<script type="text/javascript">
+$(function(){
+	//删除
+	$(".delete").click(function(e){
+		var href = $(this).attr("data-href");
+		function jump(){
+			location.href=href;
+		}
+		warning(jump);
+	});
+});
+</script>
+</body>
+</html>

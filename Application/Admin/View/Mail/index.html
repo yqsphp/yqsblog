@@ -1,0 +1,260 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 邮寄列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<if condition="$third['auth_add'] eq 1">
+				<li><a class="button border-main icon-plus-square-o" href="<{:U('mail/mailedit',array('status'=>1))}>"> 添加邮件</a></li>
+				</if>
+				<li>
+					<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+					<span class="float-left">发送时间：</span>	
+					<input type="text" class="input float-left" style="width: 110px;" id="demo1" name="start" value="<{$get.start}>" placeholder="请输入日期" onclick="laydate"/>
+					<span class="float-left">&nbsp;-&nbsp;</span>	
+					<input type="text" class="input float-left" style="width: 110px;" id="demo2" name="end" value="<{$get.end}>" placeholder="请输入日期" onclick="laydate"/>
+					<script>
+					;!function(){laydate.skin('blue');laydate({elem: '#demo1',istoday:true})}();
+					;!function(){laydate.skin('blue');laydate({elem: '#demo2',istoday:true})}();
+					</script>
+				</li>
+				<li>
+				<select name="issend" class="input">
+					<option value="">发送状态</option>
+					<option value="1" <eq name="get['issend']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="get['issend']" value="0">selected</eq>>否</option>
+					</volist>
+				</select>
+				</li>
+				<li>
+					<input type="text" placeholder="请输入发件人邮箱" name="sendfrom" class="input" 
+					 value="<if condition="!empty($get['sendfrom'])"><{$get['sendfrom']}></if>"/>
+				</li>
+				<li>
+					<input type="text" placeholder="请输入收件人邮箱" name="sendto" class="input" 
+					style="width:200px;" value="<if condition="!empty($get['sendto'])"><{$get['sendto']}></if>"/>
+				</li>
+			</ul>
+			<ul class="search margin-top margin-big-left">
+				<li>
+					<input type="text" placeholder="请输入抄送人邮箱" name="sendcopy" class="input" 
+					style="width:200px;" value="<if condition="!empty($get['sendcopy'])"><{$get['sendcopy']}></if>"/>
+				</li>
+				<li>
+					<input type="text" placeholder="请输入密送人邮箱" name="sendbcc" class="input" 
+					style="width:200px;" value="<if condition="!empty($get['sendbcc'])"><{$get['sendbcc']}></if>"/>
+				</li>
+				<li>
+					<input type="text" placeholder="请输入标题" name="name" class="input" 
+					style="width:200px;" value="<if condition="!empty($get['title'])"><{$get['title']}></if>"/>
+				</li>
+				<li>
+					<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+				</li>
+				<li>
+					<button type="reset" id="resets" class="button border-main icon-refresh"> 重置</button>
+				</li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="<{:U('maildel')}>" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="5%">序号</th>
+			<th width="5%">发件人</th>
+			<th width="5%">收件人</th>
+			<th width="5%">抄送人</th>
+			<th width="5%">密送人</th>
+			<th width="25%">标题</th>
+			<th width="10%">创建时间</th>
+			<th width="10%">发送时间</th>
+			<th width="5%">发送状态</th>
+			<th width="25%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>" data-send="<{$v.issend}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.sendfrom}></td>
+			<td><{$v.sendto|str_replace=',','<br>',###}></td>
+			<td><{$v.sendcopy|str_replace=',','<br>',###}></td>
+			<td><{$v.sendbcc|str_replace=',','<br>',###}></td>
+			<td><{$v.subject}></td>
+			<td><{$v.ctime}></td>
+			<td><{$v.stime}></td>
+			<td><{$v['issend'] == 1 ? '是' : '否'}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$v['issend'] eq 0">
+					<a class="button border-main" href="javascript:void(0)" onclick="sendajax(0,<{$v.id}>)">
+						<span class="icon-send-o"></span> 发送</a>
+					<else />
+						<a class="button border-main" href="javascript:void(0)" onclick="sendajax(0,<{$v.id}>)">
+							<span class="icon-send-o"></span> 重新发送</a>
+						<if condition="$third['auth_check'] eq 1">
+						<a class="button border-main mailshow" href="javascript:void(0)" id="<{$v.id}>">
+							<span class="icon-eye"></span> 查看</a>
+						</if>
+					</if>
+					<if condition="$v['issend'] eq 0">
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main edit" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-edit"></span> 修改</a>
+					</if>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="11" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<a class="button border-main icon-send-o" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 发送</a>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="artSelect(0)"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="11">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/maildel/id/"+id;
+		}
+		warning(jumps);
+		/*if(confirm("确定删除吗？")){
+			id=$(this).attr('id');
+			location.href="__CONTROLLER__/artdel/id/"+id;
+		}*/
+	});
+	//编辑
+	$(".edit").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/mailedit/status/2/id/"+id;
+	});
+	//查看
+	$(".mailshow").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/mailshow/id/"+id;
+	});
+	//排序设置
+	$("input[name='sort']").blur(function(){
+		var sort = $(this).val();
+		var id   = $(this).attr("id");
+		$.ajax({
+			type:"post",
+			url:"<{:U('article/artsort')}>",
+			data:{"id":id,"sort":sort},
+			success:function(res){
+				console.log(res);
+			}
+		});
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+//批量发送删除  1.发送，0.删除
+function artSelect(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	 	if(status == 0){
+			if (this.checked==true) {		
+				Checkbox=true;	
+	 		}	 		
+	 	}else{
+	 		if (this.checked==true && $(this).attr("data-send") == 0) {		
+				Checkbox=true;	
+	 		}
+	 	}
+	});
+	if (Checkbox){
+		var url="";
+		if(status==0){
+			function sumit(){
+				url='maildel/status/'+status;
+				$("#listform").attr('action','__CONTROLLER__/'+url);
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}else{
+			sendajax(1);
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+//status 1 批量发送，0，单发  
+function sendajax(status,id){
+	if(status == 1){
+		var info = $("#listform").serialize();
+	}else{
+		var info = {"id":id};
+	}
+	$.ajax({
+		type:"post",
+		url:"<{:U('mailsend')}>",
+		data:info,
+		beforeSend:loading(),
+		success:function(data){
+			if(data == 1){
+				success("发送成功");
+				setTimeout(function(){
+					location.reload();
+				},1000);
+			}else{
+				errors("发送失败");
+			}
+		}
+	});
+}
+
+</script>
+</body>
+</html>

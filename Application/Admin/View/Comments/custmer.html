@@ -1,0 +1,118 @@
+<include file="Public/header"/>
+<link href="__PUBLIC__/Css/bootstrap.min.css" rel="stylesheet" />
+<script src="__PUBLIC__/Js/bootstrap.min.js"></script>
+<style>
+body{font-size:14px;color:#333;background:#fff;font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;}
+	a:hover{text-decoration: none;}
+	.admin-panel{border:1px solid #ccc}
+</style>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 留言列表</strong>
+	</div>
+	<form id="listform" action="" method="post">
+	<table class="table table-hover text-center">
+	<tr>
+		<th></th>
+		<th>序号</th>
+		<th>用户</th>
+		<th>电话</th>
+		<th>传真</th>
+		<th>邮箱</th>
+		<th>地址</th>
+		<th>留言</th>
+		<th>留言时间</th>
+		<th>操作</th>
+	</tr>
+	<volist name="info" id="v">
+	<tr>
+		<td width="1%" style="vertical-align: middle;"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+		<td style="vertical-align: middle;"><{$i}></td>
+		<td style="vertical-align: middle;"><{$v.name}></td>
+		<td style="vertical-align: middle;"><{$v.mobile}></td>
+		<td style="vertical-align: middle;"><{$v.fax}></td>
+		<td style="vertical-align: middle;"><{$v.mail}></td>
+		<td style="vertical-align: middle;"><{$v.address}></td>
+		<td style="vertical-align: middle;"><{$v.message|mb_substr=###,0,30,'utf-8'}>...</td>
+		<td style="vertical-align: middle;"><{$v.time}></td>
+		<td style="vertical-align: middle;">
+			<div class="button-group">
+				<if condition="$third['auth_delete'] eq 1">
+				<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+					<span class="icon-trash-o"></span> 删除</a>
+				</if>
+			</div>
+		</td>
+	</tr>
+	</volist>
+	<if condition="$third['auth_delete'] eq 1">
+	<tr>
+        <td>
+        	<input type="checkbox" class="checkall"/>
+        </td>
+        <td colspan="9" style="text-align:left;padding-left:20px;">
+			<div class="button-group">
+				<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+				onclick="artSelect()"> 删除</a>
+			</div>
+		</td>
+	</tr>
+	</if>
+	<tr>
+		<td colspan="9">
+			<div class="pagelist-admin">
+				<{$page}>
+			</div>
+		</td>
+	</tr>
+	</table>
+	</form>
+</div>
+<script type="text/javascript">
+
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/cusdel/id/"+id;
+		}
+		warning(jumps);
+	});
+});
+//批量同步与删除
+function artSelect(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		var url="";
+		function sumit(){
+			$("#listform").attr('action','__CONTROLLER__/cusdel');
+			$("#listform").submit();
+		}
+		warning(sumit);
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

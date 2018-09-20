@@ -1,0 +1,47 @@
+*{padding: 0; margin: 0; text-decoration: none; list-style: none; font-family: "微软雅黑";}
+img{cursor: pointer;}
+.cont{width:1010px; height: 422px; margin:0 auto}
+.box{width:300px;height: 420px; border: 2px solid #000; position: relative; float:left; background:#EBEBEB url(../Image/wxbg.png) no-repeat}
+.link{width:700px; height: 422px; float: left; border: 1px solid #D5DFE8; position: relative;}
+.first{width: 300px; height: 40px; position: absolute; bottom: 0; border-bottom:2px solid #000}
+.first div{width:100px; height: 40px; float: left; position: relative;}
+.box input{width: 98px; border: 1px solid #C4C1BB; height: 40px; text-align: center; color:#555; border-radius:1px; cursor: pointer; background:#E4E2DF}
+.box img{width:10px;height: 13px; position: absolute;}
+.box .edit{top:5px; right: 27px;}
+.box .add{top:23px; right: 27px;}
+.box .del{top:23px; right: 27px;}
+.box .del1{top:5px; left:5px}
+.box .fedit{right:5px}
+.box input:focus{border:1px solid #00BFFF; outline: none; background:white;}
+.first .second{width: 118px; height: 40px; position: absolute;}
+.second input{width:92px; margin-left:3px; background:#EDEDED}
+/*设置操作*/
+.link{position: relative;}
+.link h3{width:690px; height: 30px; padding-left: 10px; line-height: 30px; border-bottom: 1px solid #D5DFE8; background:#F4F5F9}
+.link .text{width:700px;}
+.text .t1{text-align: center; margin-top: 34%;}
+.text .t2{width:410px; text-align: center; margin: 100px auto;}
+.t2 span ,a{display: block;}
+.t2 div{width: 200px;  float: left; margin-top: 40px;}
+.t2 a{color: #428BCA;}
+.t2 a:hover{text-decoration: underline;}
+/*链接地址跳转*/
+.url{width:700px; text-align: center; margin-top: 200px;}
+.url input{width: 400px; border:1px solid black; height: 25px; padding-left: 5px; outline:none}
+.btn{width:70px; height: 30px; border-radius: 5px; color: white; font-size: 14px; background: #80DFFF; border: none; box-shadow: 1px 1px #80DFFF; margin-top: 10px; outline: none; cursor: pointer;}
+/*发送信息*/
+.sendtext{width: 700px;}
+.setting{display: none;}
+.selt li{float: left; width: 50px; margin-left: 10px; margin-top: 10px; text-align: center; height: 25px; cursor: pointer; background: #F4F5F9; line-height: 25px; border-radius: 5px;}
+.selt .active{background: #80DFFF; color: white}
+.textcontent{width:600px; height: 200px; margin:10px 20px; border:1px solid #D5DFE8; outline: none; padding: 10px;}
+.select{display: none;}
+.ztree{height:270px; margin: 15px 0 0 20px; overflow: auto;}
+.btn1{margin-left: 20px;}
+.buttons{position: absolute; bottom: 10px;}
+/*发布菜单*/
+.publish{width:993px; height:50px; border:1px solid #D5DFE8; margin: 10px auto; padding-left: 10px;}
+.publish span{color: red;}
+/*扫码*/
+.code{width:100px; height:100px; position: fixed;bottom:50px; right: 60px;}
+.code span{display:block; width:100px; text-align: center;}

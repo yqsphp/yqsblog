@@ -1,0 +1,159 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 回收站列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<li>搜索：</li>
+				<li>
+				<select name="name" class="input" style="line-height:17px; width: 120px">
+					<option value="">请选择表</option>
+					<volist name="name" id="v">
+					<option value="<{$v.name}>" <eq name="get['name']" value="$v['name']">selected</eq>>回收-<{$v.notes}></option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<!-- <input type="text" placeholder="请输入搜索关键字" name="name" class="input" 
+					style="width:250px; line-height:17px;display:inline-block" value="<if condition="!empty($get['name'])"><{$get['name']}></if>"/> -->
+				<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a></li>
+				<li><input type="reset"  class="button border-main icon-search"  value="重置"/></li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th>序号</th>
+			<th>回收表id</th>
+			<th>回收表</th>
+			<th>表注释</th>
+			<th width="15%">回收时间</th>
+			<th width="30%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%">
+				<input type="checkbox" name="id[]" value="<{$v.rid}>"/>
+				<input type="checkbox" style="display: none;" class="table-arid" name="arid[]" value="<{$v.reid}>"/>
+				<input type="checkbox" style="display: none;" class="table-all" name="table[<{$v.rname}>][]" value="<{$v.reid}>"/>
+			</td>
+			<td><{$i}></td>
+			<td><{$v.reid}></td>
+			<td><{$v.rname}></td>
+			<td><{$v.notes}></td>
+			<td><{$v.rtime}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$third['auth_recover'] eq 1">
+					<a class="button border-main edit" href="javascript:void(0)" id="<{$v.rid}>" arid="<{$v.reid}>" table="<{$v.rname}>">
+						<span class="icon-edit"></span> 还原</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.rid}>" arid="<{$v.reid}>" table="<{$v.rname}>">
+						<span class="icon-trash-o"></span> 彻底删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="11" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<if condition="$third['auth_recover'] eq 1">
+					<a class="button border-main icon-mail-forward" href="javascript:void(0)" 
+						onclick="recover(1)"> 还原</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="recover(2)"> 彻底删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="7">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+//批量 1.还原操作 2.彻底删除 
+function recover(status){
+	var Checkbox=false;
+	$("input[name='id[]']").each(function(){
+	    if (this.checked==true) {
+	    	$(this).siblings(".table-all").attr("checked",true);
+	    	$(this).siblings(".table-arid").attr("checked",true);
+		  Checkbox=true;	
+	    }
+	});
+	if (Checkbox){
+		var url="";
+		if(status==1){
+			url="__CONTROLLER__/restore";
+			$("#listform").attr('action',url);
+			$("#listform").submit();
+		}else{
+			function sumit(){
+				url="__CONTROLLER__/del";
+				$("#listform").attr('action',url);
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+$(function(){
+	//删除
+	$(".delete").click(function(){
+		id    = $(this).attr('id');
+		arid  = $(this).attr('arid');
+		table = $(this).attr('table');
+		function jumps(){
+			location.href="__CONTROLLER__/del/table/"+table+"/id/"+id+"/arid/"+arid;
+		}
+		warning(jumps);
+	});
+	//还原操作
+	$(".edit").click(function(){
+		id	  = $(this).attr('id');
+		arid  = $(this).attr('arid');
+		table = $(this).attr('table');
+		location.href="__CONTROLLER__/restore/table/"+table+"/id/"+id+"/arid/"+arid;
+	});
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<include file="Public/header" />
+
+<body>
+	<style type="text/css">
+	</style>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong class="icon-reorder"> <font size="4"><{$info.title}></font>-权限分配</strong></div>
+		<div class="padding border-bottom">
+			<form action="" method="post">
+					<volist name="first" id="v">
+						<tr class="b-group">
+							<input type="hidden" name="id" value="<{$info.id}>" />
+							<td width="10%" style="border-right: 1px solid #ccc;">
+								<{$v.title}>
+									<input type="checkbox" name="rules[]" value="<{$v.id}>" onclick="checkAll(this)" <if condition="in_array($v['id'],$info['rules'])">checked</if>/>
+							</td>
+							<td>
+								<table class="table table-hover" style="border:1px solid #ccc" border="1">
+									<volist name="second" id="vo">
+										<if condition="$vo['pid'] eq $v['id']">
+											<tr class="b-group" width="100%">
+												<td width="12%" style="border-right:1px solid #ccc">
+													<{$vo.title}> <input type="checkbox" name="rules[]" value="<{$vo.id}>" onclick="checkAll(this)" <if condition="in_array($vo['id'],$info['rules'])">checked</if>/>
+										</td>
+										<volist name="third" id="voo">
+											<if condition="$voo['pid'] eq $vo['id']">
+												<td>
+													&emsp;
+													<{$voo.title}> <input type="checkbox" name="rules[]" value="<{$voo.id}>" <if condition="in_array($voo['id'],$info['rules'])">checked</if>/>
+											</td>
+											</if>
+										</volist>
+										</tr>
+										</if>
+									</volist>
+								</table>
+							</td>
+						</tr>
+					</volist>
+				<tr>
+					<td colspan="2">
+					<button class="button border-main icon-check" type="submit"> 提交</button>
+					</td>
+				</tr>
+			</form>
+		</div>
+	</div>
+	<script>
+		function checkAll(obj) {
+			$(obj).parents('.b-group').eq(0).find("input[type='checkbox']").prop('checked', $(obj).prop('checked'));
+		}
+	</script>
+</body>
+
+</html>

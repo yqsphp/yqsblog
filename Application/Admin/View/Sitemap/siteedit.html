@@ -1,0 +1,44 @@
+<include file="Public/header" />
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>
+  	<if condition="$status eq 1">增加<else />修改</if>内容</strong></div>
+		<div class="body-content">
+			<form method="post" id="myform" class="form-x" action="__CONTROLLER__/siteedit/status/<{$status}><if condition='isset($id)'>/id/<{$id}></if>" enctype="multipart/form-data">
+				<input type="hidden" name="type" value="<{$status}>" />
+				<input type="hidden" name="sites" value="1" />
+				<div class="form-group">
+					<div class="label">
+						<label>名称：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50" id="titles" placeholder="请输入名称" value="<{$info.name}>" name="name" data-validate="required:请输入名称" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>跳转地址：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50" placeholder="请输入跳转地址" value="<{$info.url}>" name="url" data-validate="required:请输入跳转地址" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<a href="javascript:history.back()" class="button bg-yellow icon-backward"> 返回</a>
+						<button class="button bg-main icon-check-square-o" type="submit" id="btn"> 提交</button>
+					</div>
+				</div>
+				<input type="hidden" name="id" value="<{$info.id}>" />
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

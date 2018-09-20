@@ -1,0 +1,45 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 操作日志详情列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<li>
+				<a href="javascript:void(0)" class="button border-main icon-backward" onclick="location.href='<{$jump}>'"> 返回</a>
+			</li>
+			<li>操作表：<{$table}></li>
+			<li>类型：<{$type == 1 ? '添加' : ($type == 2 ? '编辑' : '删除')}></li>
+		</ul>
+	</div>
+	<table class="table table-hover text-center">
+		<tr>
+			<th>序号</th>
+			<th>字段</th>
+			<th>名称</th>
+			<th>旧值</th>
+			<th>新值</th>
+			<th>修改日期</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr height="59">
+			<td><{$i}></td>
+			<td><{$v.tfield}></td>
+			<td><{$v.tcomment}></td>
+			<td><{$v.toldvalue}></td>	
+			<td><font color="red"><{$v.tnewvalue}></font></td>	
+			<td><{$v.ctime}></td>	
+		</tr>
+		</volist>
+		<tr>
+			<td colspan="6">
+				<div class="pagelist">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

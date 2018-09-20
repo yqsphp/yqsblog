@@ -1,0 +1,35 @@
+<include file="Public/headerinfo"/>
+<!--头部菜单-->
+<ul class="navigate">
+	<li id="0" class="active"><a href="<{:U('Index/conf')}>" target="right">后台首页</a></li>
+</ul>
+<!--头部菜单 end-->
+
+<!--左侧菜单-->
+<div class="leftnav">
+  <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
+  <volist name="menufirst" id="v">
+	<div class="comlun">
+	  <h2><span class="icon-user"></span><if condition="$v['_level'] eq 1"><{$v.title}></if></h2>
+	  <ul class="child">
+	  	<volist name="menusecond" id="vo">
+	  		<if condition="$vo['pid'] eq $v['id']">
+	  		<li>
+	  			<a href="<{:U($vo['name'],['auth_id'=>$vo['id']])}>" id="<{$vo.id}>" target="right">
+	  			<span class="icon-caret-right"></span><{$vo.title}></a>
+	  		</li>	
+	  		</if>
+	  	</volist>
+	  </ul>
+  </div>
+  </volist>
+<!--左侧菜单 end-->
+
+<!--右侧内容-->
+<div class="admin">
+  <iframe scrolling="auto" rameborder="0" src="<{:U('Index/conf')}>" name="right" width="100%" height="100%"></iframe>
+</div>
+<!--右侧内容 end-->
+</body>
+<script src="__PUBLIC__/admin/js/admin.js"></script>
+</html>

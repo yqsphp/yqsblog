@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="__PUBLIC__/syntaxhighlighter3/styles/shCore.css"/>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shCore.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCSharp.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushPhp.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushJScript.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushJava.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushVb.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushSql.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushXml.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushDelphi.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushPython.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushRuby.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCss.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCpp.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/syntaxhighlighter3/styles/shCoreDefault.css"/>
+<script type="text/javascript">
+$(function(){
+	//SyntaxHighlighter.config.clipboardSwf = '__PUBLIC__/syntaxhighlighter3/scripts/clipboard.swf';
+	SyntaxHighlighter.all();
+	
+	var shLineWrap = function() {
+		$('.syntaxhighlighter').each(function() {
+			var curr = $(this),
+				gutter = curr.find('td.gutter'),
+				code = curr.find('td.code');
+			gutter.children('.line').each(function(i) {
+				var _this = $(this),
+					codeLine = code.find('.line:nth-child(' + (i + 1) + ')');
+				var height = codeLine.height() || 0;
+				if (!height) {
+					height = 'auto'
+				} else {
+					height = height += 'px'
+				}
+				_this.attr('style', 'height: ' + height + ' !important');
+				//console.debug(_this.height(), height, _this.text(), codeLine)
+			})
+		})
+	};
+	var shLineWrapWhenReady = function() {
+			if ($('.syntaxhighlighter').length === 0) {
+				setTimeout(shLineWrapWhenReady, 10)
+			} else {
+				shLineWrap()
+			}
+		};
+	shLineWrapWhenReady();
+})
+</script>
+
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+		<article class="am-article am-margin-top-lg">
+		  	<div class="am-article-hd am-text-center">
+			    <h1 class="am-article-title"><{$info.name}></h1>
+			    <p class="am-article-meta"><{$info.editor}>&emsp;<{$info.ptime}>&emsp;浏览：<{$info.hits}></p>
+		  	</div>
+		  	<div class="am-article-bd">
+	    		<{$info.content}>
+		  	</div>
+		</article>
+
+		<div class="am-g blog-article-widget blog-article-margin">
+			<div class="am-u-lg-4 am-u-md-5 am-u-sm-7 am-u-sm-centered blog-text-center">
+				<span class="am-icon-tags"> &nbsp;</span>
+				<{$info.keywords}>
+			</div>
+		</div>
+
+		<hr>
+		<!--<div class="am-g blog-author blog-article-margin">
+			<div class="am-u-sm-3 am-u-md-3 am-u-lg-2">
+				<img src="__PUBLIC__/assets/i/f15.jpg" alt="" class="blog-author-img am-circle">
+			</div>
+			<div class="am-u-sm-9 am-u-md-9 am-u-lg-10">
+				<h3><span>作者 &nbsp;: &nbsp;</span><span class="blog-color">amazeui</span></h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+		<hr>-->
+		<ul class="am-pagination blog-article-margin">
+			<!--小屏移动端end-->
+			<li class="am-show-sm-only am-pagination-prev">
+				<eq name="pre" value="">
+				<a class="">没有了</a>
+				<else />
+				<a href="<{:getArticleUrl($pre['catid'],$pre['id'],2)}>">&laquo;上一篇</a>
+				</eq>
+			</li>
+			<li class="am-show-sm-only am-pagination-next">
+				<eq name="next" value="">
+				<a class="">没有了</a>
+				<else />
+				<a href="<{:getArticleUrl($next['catid'],$next['id'],2)}>">下一篇 &raquo;</a>
+				</eq>
+			</li>
+			<!--小屏移动端end-->
+			<li class="am-hide-sm-only am-pagination-prev">
+				<eq name="pre" value="">
+				<a class="">&laquo; 已经没有了</a>
+				<else />
+				<a href="<{:getArticleUrl($pre['catid'],$pre['id'],2)}>">&laquo; <{$pre.name}></a>
+				</eq>
+			</li>
+			<li class="am-hide-sm-only am-pagination-next">
+				<eq name="next" value="">
+				<a class="">已经没有了 &raquo;</a>
+				<else />
+				<a href="<{:getArticleUrl($next['catid'],$next['id'],2)}>"><{$next.name}> &raquo;</a>
+				</eq>
+			</li>
+		</ul>
+		<!--<hr>
+		<form class="am-form am-g">
+			<h3 class="blog-comment">评论</h3>
+			<fieldset>
+				<div class="am-form-group am-u-sm-4 blog-clear-left">
+					<input type="text" class="" placeholder="名字">
+				</div>
+				<div class="am-form-group am-u-sm-4">
+					<input type="email" class="" placeholder="邮箱">
+				</div>
+
+				<div class="am-form-group am-u-sm-4 blog-clear-right">
+					<input type="password" class="" placeholder="网站">
+				</div>
+
+				<div class="am-form-group">
+					<textarea class="" rows="5" placeholder="一字千金"></textarea>
+				</div>
+
+				<p><button type="submit" class="am-btn am-btn-default">发表评论</button></p>
+			</fieldset>
+		</form>
+		<hr>-->
+	</div>
+
+	<include file="Layout/right" />
+</div>
+<!-- content end -->

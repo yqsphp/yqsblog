@@ -1,0 +1,266 @@
+<include file="Public/header"/>
+<style>
+body{font-size:14px;color:#333;background:#fff;font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;}
+	a:hover,a:active,a:visited,a:focus{text-decoration: none;}
+	.admin-panel{border:1px solid #ccc}
+</style>
+<body>
+
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 用户组列表</strong>
+	</div>
+	<if condition="$third['auth_add'] eq 1">
+	<div class="padding border-bottom">
+		<a class="button border-main icon-plus-square-o" href="javascript:" onclick="groupedit(0,0,2)"> 添加用户组</a></li>
+	</div>
+	</if>
+	<table class="table table-hover text-center">
+	<tr>
+		<th>序号</th>
+		<th>用户组名</th>
+		<th>状态</th>
+		<th width="50%">操作</th>
+	</tr>
+	<volist name="group" id="v">
+	<tr>
+		<td style="vertical-align: middle;"><{$i}></td>
+		<td style="vertical-align: middle;"><{$v.title}></td>
+		<td style="vertical-align: middle;">
+			<font color="#00CC99">
+				<if condition="$v['status'] eq 1">
+					<span class="icon icon-unlock"></span>
+				<else />
+					<span class="icon icon-lock"></span>
+				</if>
+			</font>
+		</td>
+		<td style="vertical-align: middle;">
+			<div class="button-group">
+				<a class="button border-red" href="javascript:void(0)" onclick="groupguanli(<{$v.id}>)">
+					<span class="icon-sitemap"></span> 成员管理</a>
+				<if condition="$third['auth_edit'] eq 1">
+				<a class="button border-main" href="javascript:void(0)" 
+					onclick="groupedit(<{$v.id}>,'<{$v.title}>',<{$v.status}>)">
+					<span class="icon-edit" ></span> 修改</a>
+				</if>
+				<a class="button border-red" href="javascript:void(0)" onclick="grouprule(<{$v.id}>,'<{$v.title}>')">
+					<span class="icon-key"></span> 权限分配</a>
+				<if condition="$third['auth_add'] eq 1">
+				<a class="button border-main" href="javascript:void(0)" onclick="groupadmin(<{$v.id}>)">
+					<span class="icon-plus-square-o"></span> 添加成员</a>
+				</if>
+				<if condition="$third['auth_delete'] eq 1">
+					<if condition="$v['id'] neq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</if>
+			</div>
+		</td>
+	</tr>
+	</volist>
+	</table>
+</div>
+<!-- 弹出层 成员管理 -->
+<div class="modal fade" id="grouphand" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title grouptitle" id="myModalLabel">
+					<!-- xx组成员 -->
+				</h4>
+			</div>
+			<div class="modal-body">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr>
+							<td width="10%">序号</td>
+							<td width="25%">用户名</td>
+							<td width="25%">昵称（登陆名）</td>
+							<td width="25%">操作</td>
+						</tr>
+						<tbody id="groupguanli">
+							
+						</tbody>
+					</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 弹出层 成员管理  end-->
+<!--弹出层添加编辑权限-->
+<div class="modal fade" id="ruleedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title" id="ruleedit-myModalLabel">
+					添加用户组
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="formeidt" action="" method="post">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr>
+							<td width="14%">名称：</td>
+							<td>
+								<input class="form-control name" type="text" name="title">
+							</td>
+						</tr>
+						<tr>
+							<td>启用：</td>
+							<td align="left" style="height:20px;">
+								<input type="checkbox" class="statustype" name="status">启用
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<button class="button border-main submitdata icon-plus-square-o" type="submit">
+      			 添加</button> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层添加编辑权限over-->
+<!--弹出层添加组成员-->
+<div class="modal fade" id="admineidt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加组成员
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="admineidt" action="<{:U('rule/adminedit',array('type'=>2))}>" method="post">
+					<input class="groupid" type="hidden" name="groupid">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr>
+							<td width="14%">姓名：</td>
+							<td>
+								<input class="form-control truename" type="text" name="truename">
+							</td>
+						</tr>
+						<tr>
+							<td width="14%">昵称：</td>
+							<td>
+								<input class="form-control name" type="text" name="name">
+							</td>
+						</tr>
+						<tr>
+							<td width="14%">性别：</td>
+							<td align="left">
+								<label><input class="sex" type="radio" name="sex" value="1"> 男</label> &emsp;
+								<label><input class="sex" type="radio" name="sex" value="0"> 女</label>
+							</td>
+						</tr>
+						<tr>
+							<td>邮箱：</td>
+							<td>
+								<input class="form-control mail" type="text" name="mail" > 
+							</td>
+						</tr>
+						<tr>
+							<td>密码：</td>
+							<td>
+								<input class="form-control pass" type="password" name="pass" > 
+							</td>
+						</tr>
+						<tr>
+							<td>启用：</td>
+							<td align="left" style="height:20px;">
+								<input type="checkbox" checked="checked" name="status">启用
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<button class="button border-main submitdata icon-plus-square-o" type="submit">
+      			 添加</button> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层添加组成员over-->
+<script type="text/javascript">
+$(function(){
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function del3(){
+			location.href="__CONTROLLER__/groupdel/id/"+id;
+		}
+		warning(del3);
+	});
+});
+function groupedit(id,title,type){
+	$("#formeidt").attr('action','__CONTROLLER__/groupedit/type/'+type+'/id/'+id);
+	var check=$(".statustype");
+	if(!id){//添加
+		check.attr('checked','checked');
+		$(".submitdata").removeClass('icon-edit').addClass('icon-plus-square-o').html(' 添加');
+		$("#ruleedit-myModalLabel").html("添加组成员");
+	}else{//编辑
+		if(type==1){
+			check.attr('checked','checked');
+		}
+		$("#ruleedit-myModalLabel").html("修改组成员");
+		$(".submitdata").removeClass('icon-plus-square-o').addClass('icon-edit').html(' 修改');
+		$(".name").val(title);
+	}
+	$("#ruleedit").modal('show');
+}
+//添加组成员
+function groupadmin(groupid){
+	$(".groupid").val(groupid);
+	$("#admineidt").modal('show');
+}
+//删除组成员
+function groupdelete(id){
+	function dels(){
+		location.href="__CONTROLLER__/groupguanlidel/id/"+id;
+	}
+	warning(dels);
+}
+//给用户组分配权限
+function grouprule(id,title){
+	location.href="__CONTROLLER__/rulegroup/id/"+id+"/title/"+title;
+}
+//组成员管理
+function groupguanli(groupid){
+	var group=$('#groupguanli');
+	group.empty();
+	$.post("__CONTROLLER__/groupguanli",{"groupid":groupid},function(data){
+		if(data.length==0){
+			group.empty().append('<tr><td colspan="4">本组暂无成员</td></tr>');
+		}else{
+			$(".grouptitle").text(data[0].title+'成员列表');
+			for(var i=0, len=data.length; i<len; i++){
+				var str='<tr valign="middle" class="members">'+
+				'<td>'+data[i].id+'</td>'+
+				'<td>'+data[i].truename+'</td>'+
+				'<td>'+data[i].name+'</td>'+
+				'<td><button class="button border-red icon-trash-o" onclick="groupdelete('+data[i].id+')">'+
+     			' 删除</button> </td>'+
+				'</tr>';
+				group.append(str);
+			}
+		}
+	});
+	$("#grouphand").modal('show');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 留言列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<!--搜索-->
+	<form action="" method="get" id="serachs">
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<li>搜索：</li>
+			<li>
+				<select name="type" class="input" style="line-height:17px;">
+					<option value="">性别</option>
+					<option value="1"<eq name="get['sex']" value="1">selected</eq>>男</option>
+					<option value="0"<eq name="get['sex']" value="0">selected</eq>>女</option>
+				</select>
+			</li>
+			<li>
+				<select name="status" class="input" style="line-height:17px;">
+					<option value="">反馈状态</option>
+					<option value="1"<eq name="get['back']" value="1">selected</eq>>已反馈</option>
+					<option value="0"<eq name="get['back']" value="0">selected</eq>>待反馈</option>
+				</select>
+			</li>
+			<li>
+				<select name="age" class="input" style="line-height:17px;">
+					<option value="">年龄范围</option>
+					<option value="1"<eq name="get['age']" value="1">selected</eq>>35岁以下</option>
+					<option value="2"<eq name="get['age']" value="2">selected</eq>>35-40岁</option>
+					<option value="3"<eq name="get['age']" value="3">selected</eq>>41-45岁</option>
+					<option value="4"<eq name="get['age']" value="4">selected</eq>>45岁以上</option>
+				</select>
+			</li>
+			<li>
+				<select name="type" class="input" style="line-height:17px;">
+					<option value="">人群</option>
+					<option value="1"<eq name="get['type']" value="1">selected</eq>>异性</option>
+					<option value="2"<eq name="get['type']" value="2">selected</eq>>单身</option>
+					<option value="3"<eq name="get['type']" value="3">selected</eq>>同性</option>
+				</select>
+			</li>
+			<li>
+				<select name="status" class="input" style="line-height:17px;">
+					<option value="">生育</option>
+					<option value="1"<eq name="get['status']" value="1">selected</eq>>未育</option>
+					<option value="2"<eq name="get['status']" value="2">selected</eq>>一胎</option>
+					<option value="3"<eq name="get['status']" value="3">selected</eq>>二胎</option>
+				</select>
+			</li>
+			<li>
+				<select name="source" class="input" style="line-height:17px;">
+					<option value="">来源</option>
+					<option value="1"<eq name="get['source']" value="1">selected</eq>>pc</option>
+					<option value="2"<eq name="get['source']" value="2">selected</eq>>移动</option>
+					<option value="3"<eq name="get['source']" value="2">selected</eq>>答疑会</option>
+					<option value="4"<eq name="get['source']" value="4">selected</eq>>今日头条</option>
+					<option value="5"<eq name="get['source']" value="5">selected</eq>>腾讯新闻</option>
+					<option value="6"<eq name="get['source']" value="6">selected</eq>>UC头条</option>
+					<option value="7"<eq name="get['source']" value="7">selected</eq>>美柚</option>
+				</select>
+			</li>
+			<li>
+				<select name="will" class="input" style="line-height:17px;">
+					<option value="">意向</option>
+					<option value="1"<eq name="get['will']" value="1">selected</eq>>冻卵</option>
+					<option value="2"<eq name="get['will']" value="2">selected</eq>>性别选择</option>
+					<option value="3"<eq name="get['will']" value="3">selected</eq>>代孕</option>
+				</select>
+			</li>
+			<li>
+				<select name="isone" class="input" style="line-height:17px;">
+					<option value="">一对一</option>
+					<option value="1"<eq name="get['isone']" value="1">selected</eq>>是</option>
+					<option value="0"<eq name="get['isone']" value="0">selected</eq>>否</option>
+				</select>
+			</li>
+			<li>
+			<button href="javascript:void(0)" type="submit" class="button border-main icon-search"> 搜索</button>
+			<button href="javascript:void(0)" type="reset" id="resets" class="button border-main icon-search"> 重置</button></li>
+			<li>
+				<font color="red">注意：客服反馈用户后，请及时点击确认按钮</font>
+			</li>
+		</ul>
+	</div>
+	</form>
+	<!--数据统计 留言来源 按月份-->
+	<eq name="Think.session.user_info.user_id" value="1">
+	<div class="padding border-bottom">
+		<form action="<{:U('messexport')}>" method="post" id="messexport">
+			<ul class="search" style="padding-left:10px;">
+				<li>导出：</li>
+				<li>
+					<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+					<span class="float-left">日期范围：</span>	
+					<input type="text" class="input float-left" style="width: 110px;" id="demo5" name="exstart" value="<{$get.exstart}>" placeholder="请输入日期" onclick="laydate"/>
+					<span class="float-left">&nbsp;-&nbsp;</span>	
+					<input type="text" class="input float-left" style="width: 110px;" id="demo6" name="exend" value="<{$get.exend}>" placeholder="请输入日期" onclick="laydate"/>
+					<script>
+					;!function(){laydate.skin('blue');laydate({elem: '#demo5',istoday:true})}();
+					;!function(){laydate.skin('blue');laydate({elem: '#demo6',istoday:true})}();
+					</script>
+				</li>
+				<li>
+					<select name="source" class="input" style="line-height:17px;">
+						<option value="">来源</option>
+						<!--<option value="1"<eq name="get['source']" value="1">selected</eq>>pc</option>
+						<option value="2"<eq name="get['source']" value="2">selected</eq>>移动</option>
+						<option value="3"<eq name="get['source']" value="2">selected</eq>>答疑会</option>-->
+						<option value="4"<eq name="get['source']" value="4">selected</eq>>今日头条</option>
+						<option value="5"<eq name="get['source']" value="5">selected</eq>>腾讯新闻</option>
+						<option value="6"<eq name="get['source']" value="6">selected</eq>>UC头条</option>
+						<option value="7"<eq name="get['source']" value="7">selected</eq>>美柚</option>
+						<option value="7"<eq name="get['source']" value="15">selected</eq>>梦美主站·公益宣传专题</option>
+					</select>
+				</li>
+				<li>
+					<button href="javascript:void(0)" id="export" type="button" class="button border-main icon-edit"> 导出</button>
+				</li>
+				<li>
+					<font color="red">注意：如果不选择筛选条件，则导出全部数据</font>
+				</li>
+				<li>
+					<a href="<{:U('getcount')}>" class="button border-main icon-edit"> 访问量统计</a>
+				</li>
+			</ul>
+		</form>
+		<script type="text/javascript">
+			$("#export").click(function(){
+				var e = $("#demo5").val();
+				var f = $("#demo6").val();
+				if(!e && !f){
+					$("#messexport").submit();
+				}else if((e && !f) || (!e && f)){
+					errors("时间范围不能为空");
+				}else if(e && f){
+					if(e > f){
+						errors("开始时间不能大于结束时间");
+					}else{
+						$("#messexport").submit();
+					}
+				}
+			});
+		</script>
+	</div>
+	</eq>
+	<!--数据统计 留言来源 按月份end-->
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="3%">序号</th>
+			<th width="5%">姓名</th>
+			<th width="3%">性别</th>
+			<th width="5%">年龄范围</th>
+			<th width="7%">电话</th>
+			<th width="8%">微信</th>
+			<th width="4%">人群</th>
+			<th width="4%">生育</th>
+			<th width="5%">意向</th>
+			<th width="6%">留言时间</th>
+			<th width="5%">一对一</th>
+			<th width="5%">来源</th>
+			<th width="5%">处理状态</th>
+			<th width="15%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.name}></td>
+			<td>
+				<if condition="$v['info'] eq 1">
+				<{$v['sex'] == 1 ? '男' : '女'}>
+				<else />
+					<if condition="$v['sex'] neq 2">
+					<{$v['sex'] == 1 ? '男' : '女'}>
+					<else />
+					未知
+					</if>
+				</if>
+			</td>
+			<td>
+				<if condition="$v['info'] eq 1">
+					<if condition="$v['age'] eq 1">
+					35岁以下	
+					<elseif condition="$v['age'] eq 2" />
+					35-40岁
+					<elseif condition="$v['age'] eq 3" />
+					41-45岁
+					<else />
+					45以上
+					</if>
+				<else />
+				未知
+				</if>
+			</td>
+			<td><{$v.mobile}></td>
+			<td><{$v.wechat}></td>
+			<td>
+				<if condition="$v['info'] eq 1">
+					<if condition="$v['type'] eq 1">
+					异性	
+					<elseif condition="$v['type'] eq 2" />
+					单身
+					<else />
+					同性
+					</if>
+				<else />
+				未知
+				</if>
+			</td>
+			<td>
+				<if condition="$v['info'] eq 1">
+					<if condition="$v['status'] eq 1">
+					未育	
+					<elseif condition="$v['status'] eq 2" />
+					一胎
+					<else />
+					二胎
+					</if>
+				<else />
+				未知
+				</if>
+			</td>
+			<td>
+				<if condition="$v['info'] eq 1">
+					<if condition="$v['will'] eq 1">
+					冻卵	
+					<elseif condition="$v['will'] eq 2" />
+					性别选择
+					<else />
+					代孕
+					</if>
+				<else />
+				未知
+				</if>
+			</td>
+			<td><{$v.ctime}></td>
+			</td>
+			<td>
+				<if condition="$v['info'] eq 1">
+				<{$v['isone'] == 1 ? '是' : '否'}>
+				<else />
+				未知
+				</if>
+			</td>
+			<td>
+				<switch name="v.source">
+					<case value="1">pc</case>
+					<case value="2">移动</case>
+					<case value="3">答疑会</case>
+					<case value="4">今日头条</case>
+					<case value="5">UC头条</case>
+					<case value="6">腾讯新闻</case>
+					<case value="7">美柚</case>
+					<case value="15">梦美主站·公益宣传专题</case>
+				</switch>
+			</td>
+			<td><{$v['back'] == 1 ? '是' : '否'}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$v['back'] eq 0">
+					<a class="button border-main icon-edit" href="<{:U('messedit',['id'=>$v['id']])}>"> 确认</a>
+					</if>
+					<if condition="$third['auth_check'] eq 1">
+					<a class="button border-main icon-edit" href="<{:U('messshow',['id'=>$v['id']])}>"> 查看</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" href="<{:U('messdel',['id'=>$v['id']])}>"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<if condition="$third['auth_delete'] eq 1">
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="15" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<!-- <a class="button border-main icon-edit" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 查看</a> -->
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="message(0)"> 删除</a>
+				</div>
+			</td>
+        </tr>
+        </if>
+		<tr>
+			<td colspan="15">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+//批量删除
+function message(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		$("#listform").attr("action","<{:U('messdel')}>");
+		warning(function(){
+			$("#listform").submit();			
+		});
+	}
+	else{
+		errors("请选择的内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

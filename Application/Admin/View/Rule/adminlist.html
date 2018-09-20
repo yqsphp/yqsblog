@@ -1,0 +1,191 @@
+<include file="Public/header"/>
+<style>
+body{font-size:14px;color:#333;background:#fff;font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;}
+	a:hover,a:active,a:visited,a:focus{text-decoration: none;}
+	.admin-panel{border:1px solid #ccc}
+</style>
+<body>
+
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 管理员列表</strong>
+	</div>
+	<if condition="$third['auth_add'] eq 1">
+	<div class="padding border-bottom">
+		<a class="button border-main icon-plus-square-o" href="javascript:" onclick="adminedit(0,0,0,2)"> 添加管理员</a></li>
+	</div>
+	</if>
+	<table class="table table-hover text-center">
+	<tr>
+		<th width="3%">序号</th>
+		<th width="5%">姓名</th>
+		<th width="5%">昵称</th>
+		<th width="3%">性别</th>
+		<th width="10%">邮箱</th>
+		<th width="15%">最后登录ip</th>
+		<th width="15%">最后登录时间</th>
+		<th width="15%">用户组</th>
+		<th width="3%">状态</th>
+		<th width="20%">操作</th>
+	</tr>
+	<volist name="admin" id="v">
+	<tr>
+		<td style="vertical-align: middle;"><{$i}></td>
+		<td style="vertical-align: middle;"><{$v.truename}></td>
+		<td style="vertical-align: middle;"><{$v.name}></td>
+		<td style="vertical-align: middle;"><{$v['sex'] == 1 ? '男' : '女'}></td>
+		<td style="vertical-align: middle;"><{$v.mail}></td>
+		<td style="vertical-align: middle;"><{$v.lastip}></td>
+		<td style="vertical-align: middle;"><{$v.lasttime}></td>
+		<td style="vertical-align: middle;"><{$v.title}></td>
+		<td style="vertical-align: middle;">
+			<font color="#00CC99">
+				<if condition="$v['status'] eq 1">
+					<span class="icon icon-unlock"></span>
+				<else />
+					<span class="icon icon-lock"></span>
+				</if>
+			</font>
+		</td>
+		<td style="vertical-align: middle;">
+			<div class="button-group">
+				<if condition="$third['auth_edit'] eq 1">
+				<a class="button border-main" href="javascript:void(0)" 
+					onclick="adminedit(<{$v.id}>,'<{$v.name}>','<{$v.pass}>',<{$v.status}>,'<{$v.groupid}>','<{$v.truename}>','<{$v.mail}>',<{$v.sex}>)">
+					<span class="icon-edit" ></span> 修改</a>
+				</if>
+				<if condition="$third['auth_delete'] eq 1">
+					<if condition="$v['id'] neq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</if>
+			</div>
+		</td>
+	</tr>
+	</volist>
+	</table>
+</div>
+<!--弹出层添加编辑权限-->
+<div class="modal fade" id="ruleedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加管理员
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="formeidt" action="" method="post">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr>
+							<td width="14%">姓名：</td>
+							<td>
+								<input class="form-control truename" type="text" name="truename">
+							</td>
+						</tr>
+						<tr>
+							<td width="17%">昵称：</td>
+							<td>
+								<input class="form-control name" type="text" name="name">
+							</td>
+						</tr>
+						<tr>
+							<td width="14%">性别：</td>
+							<td align="left">
+								<label><input class="sex" type="radio" name="sex" value="1"> 男</label> &emsp;
+								<label><input class="sex" type="radio" name="sex" value="0"> 女</label>
+							</td>
+						</tr>
+						<tr>
+							<td>邮箱：</td>
+							<td>
+								<input class="form-control mail" type="text" name="mail" > 
+							</td>
+						</tr>
+						<tr id="password-user">
+							<td>密码：</td>
+							<td>
+								<input class="form-control pass" type="password" name="pass" > 
+							</td>
+						</tr>
+						<tr class="gr">
+							<td>用户组：</td>
+							<td>
+								<div class="field">
+									<volist name="group" id="vo">
+									<input type="checkbox" class="group" name="groupid[]" value="<{$vo.id}>"/><{$vo.title}> &emsp;
+									</volist>
+						            
+        					</div>
+							</td>
+						</tr>
+						<tr>
+							<td>启用：</td>
+							<td align="left" style="height:20px;">
+								<input type="checkbox" class="statustype" name="status">启用
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<button class="button border-main submitdata icon-plus-square-o" type="submit">
+      			 添加</button> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层添加编辑权限over-->
+<script type="text/javascript">
+$(function(){
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function del2(){
+			location.href="__CONTROLLER__/admindel/id/"+id;
+		}
+		warning(del2);
+	});
+});
+function adminedit(id,name,pass,type,groupid,truename,mail,sex){
+	$("#formeidt").attr('action','__CONTROLLER__/adminedit/type/'+type+'/id/'+id);
+	var check=$(".statustype");
+	if(!id){//添加
+		check.attr('checked',true);
+		$("#myModalLabel").html("添加成员");
+		$("#password-user").show();
+		$(".pass").val('');
+		$(".name").val('');
+		$(".group").removeAttr('disabled');
+		$(".submitdata").removeClass('icon-edit').addClass('icon-plus-square-o').html(' 添加');
+	}else{//编辑
+		if(type==1){
+			check.attr('checked',true);
+			$("#myModalLabel").html("编辑成员");
+			$("#password-user").hide();
+		}
+		$(".group").each(function(i,o){
+			if(groupid.indexOf($(o).val()) != -1){
+				$(o).attr("checked",true);
+			}
+		});
+		$(".submitdata").removeClass('icon-plus-square-o').addClass('icon-edit').html(' 修改');
+		$(".pass").val(pass);
+		$(".name").val(name);
+		$(".truename").val(name);
+		$(".mail").val(mail);
+		if(sex == 1)
+			$(".sex").eq(0).attr("checked",true);
+		else if(sex == 0)
+			$(".sex").eq(1).attr("checked",true);
+	}
+	$("#ruleedit").modal('show');
+}
+</script>
+</body>
+</html>

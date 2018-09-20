@@ -1,0 +1,201 @@
+<include file="Public/header"/>
+<style type="text/css">
+	.logo-icon{float: left; width:60px; height: 50px; border: 1px solid #ccc;}
+</style>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 网站信息</strong></div>
+  <div class="body-content">
+    <form id="form" method="post" enctype="multipart/form-data" class="form-x" action="<{:U('Index/info')}>">
+      <div class="form-group">
+        <div class="label">
+          <label>网站标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="webtitle" placeholder="请输入网站标题" value="<{:C('webtitle')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站LOGO：</label>
+        </div>
+        <div class="field">
+        	<div class="logo-icon">
+        		<img src="<if condition="C('logo') neq ''">__PUBLIC__/<{:C('logo')}>
+        			<else />__PUBLIC__/Image/defalut.jpg</if>" width="60" height="50" />
+        	</div>
+          <input type="file" name="logo" id="file" style="display:none"/>
+          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传" >
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>网站域名：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="website" placeholder="请输入网站域名：以http://或https://开头" value="<{:C('website')}>" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>SEO关键字：</label>
+        </div>
+        <div class="field">
+        	<input type="text" class="input" name="keywords" placeholder="请输入SEO关键字" value="<{:C('keywords')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>SEO描述：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="description" placeholder="请输入SEO描述"><{:C('description')}></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>联系人：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="contact" placeholder="请输入联系人" value="<{:C('contact')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>电话：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="mobile" placeholder="请输入电话" value="<{:C('mobile')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>座机：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="phone" placeholder="请输入座机" value="<{:C('phone')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>QQ：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="QQ" placeholder="请输入QQ" value="<{:C('QQ')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>Email：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="email" placeholder="请输入email" value="<{:C('email')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>微博：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="blog" placeholder="请输入微博" value="<{:C('blog')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>备案号：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="number" placeholder="请输入备案号" value="<{:C('number')}>" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>地址：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" name="address" placeholder="多个以“,”分割"><{:C('address')}></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>  
+              
+      <div class="form-group">
+        <div class="label">
+          <label>版权信息：</label>
+        </div>
+        <div class="field">
+          <textarea name="copyright" class="input" placeholder="请输入版权信息" style="height:80px;"><{:C('copyright')}></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+     <!--  <div class="form-group">
+        <div class="label">
+          <label>移动端主题：</label>
+        </div>
+        <div class="field">
+      	  <select name="waptheme">
+      	  	<option value="1" <if condition="C('waptheme') eq 1">selected</if>>天空蓝</option>
+      	  	<option value="2" <if condition="C('waptheme') eq 2">selected</if>>纯爱紫</option>
+      	  </select>
+          <textarea name="copyright" class="input" style="height:80px;"><{:C('copyright')}></textarea>
+          <div class="tips"></div>
+        </div>
+      </div> -->
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+<script>
+$(function(){
+	$("#image1").click(function(){
+		$("#file").click();
+	});	
+	//文件上传预览
+	$("#file").change(function() {
+		//在重新点击上传附件移除所有img的元素
+		$(".logo-icon").children('img').remove();
+		// 得到一个参考文件列表
+		var files = !! this.files ? this.files : [];
+		console.log(files);
+		// 如果没有选择任何文件,或者没有FileReader支持,返回
+		if (!files.length || !window.FileReader) return;
+		// 只有选择的文件是一个image才显示
+		//if (/^image/.test( files[i].type)){}
+		$.each(files, function(i) {
+			// 创建一个新的FileReader的实例
+			var reader = new FileReader();
+			reader.readAsDataURL(files[i]);
+			// 当加载时,图像数据
+			reader.onloadend = function() {
+				img = "<img src='" + this.result + "' width=60 height=50/> &nbsp;";
+				$(".logo-icon").append(img);
+			}
+		});
+	});
+    			/*$.ajax({
+    				type:"post",
+    				url:"<{:U('Index/info')}>",
+    				data:$("#form").serialize(), //可以获取form提交的表单信息
+    				success:function(data){
+    					console.log(data);
+    				}
+    			});*/
+	});
+    </script>
+  </div>
+</div>
+</body></html>

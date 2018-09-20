@@ -1,0 +1,22 @@
+<include file="Public/header"/>
+<style>
+.customer{margin-left:42.5px;width:40%; float:left;}
+.customer li{line-height:40px;}
+.customer li b{width:100px; vertical-align:top; text-align:right; display:inline-block;}
+.customer-text{width:500px; line-height:30px;display:inline-block;}
+</style>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>留言内容</strong></div>
+  <div class="body-content">
+      <ul class="customer">
+      	<li><b>姓名：</b><{$info.name}></li>
+      	<li><b>性别：</b><{$info['sex'] == 1 ? '男' : '女'}></li>
+      	<li><b>电话：</b><{$info.mobile}></li>
+      	<li><b>留言地址：</b><{$info.address}></li>
+      	<li><b>留言内容：</b><div class="customer-text"><{$info.message}></div></li>
+      	<li><b>留言时间：</b><{$info.ctime}></li>
+      </ul>
+  </div>
+</div>
+</body></html>

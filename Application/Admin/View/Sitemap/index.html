@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>网站地图</title>
+	</head>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		.sitemap{width: 1000px; height: 500px; margin: 100px auto;}
+		.sitemap h1{text-align: center;}
+		.content{width: 100%; margin-top: 50px;}
+		.content li{width: 20%; box-sizing: border-box; padding: 5px; line-height: 35px; text-align: center; list-style: none; display: inline-block;}
+		.footer{position: absolute; width: 100%; line-height: 50px; bottom: 0; text-align: center;}
+	</style>
+	<body>
+		<div class="sitemap">
+			<h1>网站地图</h1>
+			<ul class="content">
+				<volist	name="info" id="v">
+				<li>
+					<a href="<{$v.url}>" target="_blank" title="<{$v.name}>"><{$v.name}></a>
+				</li>
+				</volist>
+			</ul>
+		</div>
+		<div class="footer">
+			&copy; <{:C('copyright')}>
+		</div>
+	</body>
+</html>

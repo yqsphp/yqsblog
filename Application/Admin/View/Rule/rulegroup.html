@@ -1,0 +1,73 @@
+<include file="Public/header" />
+
+<body>
+	<style type="text/css">
+	</style>
+	<div class="panel admin-panel">
+		<div class="padding border-bottom">
+			<form action="" method="post">
+				<div class="panel-head"><strong class="icon-reorder"> <font size="4"><{$info.title}></font>-权限分配 </strong>
+					<input type="hidden" name="id" value="<{$id}>" />	
+					<button class="button border-main icon-check" type="submit"> 提交</button>
+					<button class="button bg-red icon-mail-reply" type="button" onclick="history.back()"> 撤销</button>
+				</div>
+				<ul class="list-group">
+					<volist name="first" id="v">
+					<li class="float-left border">
+						<input type="checkbox" name="rules[]" value="<{$v.id}>" onclick="checkAll(this,1)" <if condition="in_array($v['id'],$info['rules'])">checked</if>/>
+						<b><{$v.title}></b>
+						<ul>
+						<volist name="second" id="vo">
+							<if condition="$vo['pid'] eq $v['id']">
+								<li>
+									<input type="checkbox" name="rules[]" fpid="<{$v['id']}>" value="<{$vo.id}>" onclick="checkAll(this,2)" <if condition="in_array($vo['id'],$info['rules'])">checked</if>/>
+									<b><{$vo.title}></b>
+									<ul>
+									<volist name="third" id="voo">
+										<if condition="$voo['pid'] eq $vo['id']">
+										<li>
+											<input type="checkbox" name="rules[]" fpid="<{$v['id']}>" cpid="<{$vo['id']}>" value="<{$voo.id}>" <if condition="in_array($voo['id'],$info['rules'])">checked</if>/>
+											<{$voo.title}>
+										</li>
+										</if>
+									</volist>
+									</ul>
+								</li>
+							</if>
+						</volist>
+						</ul>
+					</li>
+					</volist>
+				</ul>	
+			</form>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script>
+		/**
+		 * 
+		 * @param {Object} obj 当前对象
+		 * @param {Number} num 1.一级父级，2.二级父级，3.三级
+		 */
+		function checkAll(obj,num) {
+			var pid = $(obj).val();
+			console.log(pid);
+			$("input[type='checkbox']").each(function(i,o){
+				var o = $(o);
+				if(num == 1){
+					if(o.attr("fpid") == pid){
+						$(obj).prop('checked') ? o.prop('checked', true) : o.prop('checked', false);
+					}
+				}else if(num == 2){
+					if(o.attr("cpid") == pid){
+						console.log(pid);
+						$(obj).prop('checked') ? o.prop('checked', true) : o.prop('checked', false);
+					}
+				}
+			});
+			//$(obj).parents('.b-group').eq(0).find("input[type='checkbox']").prop('checked', $(obj).prop('checked'));
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<include file="Public/header"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader/webuploader.min.css"/>
+<script src="__PUBLIC__/webuploader/webuploader.js"></script>
+<script src="__PUBLIC__/webuploader/uploadImgPreview.min.js"></script>
+<style type="text/css">
+	.logo-icon{float: left; width:60px; height: 50px; border: 1px solid #ccc;}
+	._filelist li,.attachlist li{ /*这个选择器一定要有宽高，否则图片显示不出来，因为它里面的内容是绝对定位的*/
+                width: 180px;
+                height: 160px;
+            }
+	#select_attach{width: 100px; display: block; height: 41.5px; line-height: 41.5px; border-radius: 7px;}
+	.button-uploas>div{float: left;}
+	.attach-img{width: 100%; transform: translate(-50%,-50%);}
+	.attach-txt{width: 100%; position: absolute; top: 50%; left: 0px; cursor: default; margin-top: -24px;}
+	.customer{margin-left:42.5px;width:100%; float:left;}
+	.customer li{line-height:40px;}
+	.customer li b{width:100px; vertical-align:top; text-align:right; display:inline-block;}
+	.customer li>div,.customer li>ul{display: inline-block;}
+	.ke-toolbar{display: none !important;}
+</style>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>
+  		查看邮件</strong></div>
+  <div class="body-content">
+	<ul class="customer">
+      	<li><b>发件人：</b><{$info.sendfrom}></li>
+      	<li><b>收件人：</b><{$info.sendto}></li>
+      	<li><b>抄送人：</b><{$info.sendbcc}></li>
+      	<li><b>密送人：</b><{$info.sendcopy}></li>
+      	<li><b>标题：</b><{$info.subject}></li>
+      	<li><b>内容：</b>
+      		<textarea id="kindeditor" name="content" class="input" style="height:450px; border:1px solid #ddd;"><{$info.content}></textarea>
+         <script src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+         <script>
+	    	KindEditor.ready(function(K){
+				window.editor=K.create("#kindeditor",{
+					width:1000,
+					height:500,
+					allowFileManager : true,
+					afterBlur:function(){ //失去焦点获取textareea的值
+						this.sync();
+					}
+				});
+			});
+	    	</script>
+      	</li>
+      	<li><b>附件集：</b>
+      		<ul class="attachlist">
+          		<if condition="!empty($info['attach'])">
+					<volist name="info['attach']" id="v">
+						<li>
+							<p class="title"><{$v.name}></p>
+							<p class="imgWrap">
+								<if condition="in_array($v['ext'],['jpg','png','gif','jpeg','bmp'])">
+									<img class="attach-img" src="__PUBLIC__/<{$v.path}>" />
+								<else />
+								<div class="attach-txt">
+									您上传的<b> <{$v.name}> </b>文件不支持预览！
+								</div>
+								</if>
+							</p>
+						</li>
+					</volist>      		
+	          	</if>  
+          	</ul>
+      	</li>
+    </ul>
+  </div>
+</div>
+</body></html>

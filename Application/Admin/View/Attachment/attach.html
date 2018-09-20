@@ -1,0 +1,133 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 附件列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<!--搜索-->
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<li><a class="button border-main icon-plus-square-o" href="<{:U('attedit',['status'=>1])}>"> 添加视频附件</a></li>
+				<!--<li>搜索：</li>
+				<li>
+					<select name="ext" class="input">
+						<option value="">格式选择</option>
+						<option value="1"<eq name="get['ext']" value="1">selected</eq>>图片</option>
+						<option value="0"<eq name="get['ext']" value="0">selected</eq>>非图片</option>
+					</select>
+				</li>
+				<li>
+				<button href="javascript:void(0)" type="submit" class="button border-main icon-search"> 搜索</button>
+				<button href="javascript:void(0)" type="reset" id="resets" class="button border-main icon-search"> 重置</button></li>-->
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="3%">序号</th>
+			<th width="5%">附件名</th>
+			<th width="5%">缩略图</th>
+			<th width="7%">格式</th>
+			<th width="8%">创建时间</th>
+			<th width="10%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.name}></td>
+			<td>
+				<if condition="$v['show'] eq 1">
+				<img src="__PUBLIC__/<{$v.path}>" width="100" height="60"/>
+				<elseif condition="$v['path_thumb']" />
+				<img src="__PUBLIC__/<{$v.path_thumb}>" width="100" height="60"/>
+				<else />
+				该文件暂不支持预览
+				</if>
+			</td>
+			<td><{$v.ext}></td>
+			<td><{$v.ctime}><td>
+				<div class="button-group">
+					<!-- <a class="button border-main icon-edit" href="<{:U('admin/message/messshow/id/'.$v['id'])}>"> 查看</a> -->
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o delete" href="javascript:" id="<{$v.id}>"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<if condition="$third['auth_delete'] eq 1">
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="15" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<!-- <a class="button border-main icon-edit" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 查看</a> -->
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="message()"> 删除</a>
+				</div>
+			</td>
+        </tr>
+        </if>
+		<tr>
+			<td colspan="15">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+	//删除
+	$(".delete").click(function(){
+		var id = $(this).attr("id");
+		function jump(){
+			location.href="__CONTROLLER__/attdel/id/"+id;
+		}
+		warning(jump);
+	});
+});
+//批量删除
+function message(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		$("#listform").attr('action','__CONTROLLER__/attdel');
+		$("#listform").submit();		
+	}
+	else{
+		errors("请选择的内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

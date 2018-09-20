@@ -1,0 +1,65 @@
+<include file="Public/header" />
+<style>
+	.admin-panel {
+		width: 45%;
+		float: left;
+		margin-right: 20px;
+		height: 300px
+	}
+	
+	.admin-panel p {
+		height: 20px;
+		margin-left: 20px;
+		margin-top: 5px
+	}
+</style>
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 版权信息</strong></div>
+		<p>版权：
+			<{:C( 'copyright')}>
+		</p>
+		<p>地址：
+			<{:C( 'address')}>
+		</p>
+		<p>邮箱：
+			<{:C( 'email')}>
+		</p>
+		<p>电话：
+			<{:C( 'phone')}>
+		</p>
+	</div>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 配置信息</strong></div>
+		<p>网站版本：
+			<{$server.version}>
+		</p>
+		<p>操作系统：
+			<{$server.os}>
+		</p>
+		<p>运行环境：
+			<{$server.software}>
+		</p>
+		<p>网站域名：
+			<{$server.ip}>
+		</p>
+		<p>文件上传限制：
+			<{$server.upload_filesize}>
+		</p>
+		<p>执行时间限制：
+			<{$server.wait_time}>
+		</p>
+		<p>剩余空间：
+			<{$server.space}>
+		</p>
+	</div>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 待办</strong></div>
+	</div>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 最新消息</strong></div>
+	</div>
+</body>
+
+</html>

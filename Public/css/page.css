@@ -1,0 +1,12 @@
+.pagelist,.pagelist-admin {padding:10px 0; text-align:center; margin-bottom: 10px;}
+.pagelist span,.pagelist a,.pagelist-admin span,.pagelist-admin a{ border-radius:3px; border:1px solid #dfdfdf;display:inline-block; padding:5px 12px;}
+.pagelist a,.pagelist-admin a{ margin:0 3px;}
+.pagelist span.current,.pagelist-admin span.current{ background:#09F; color:#FFF; border-color:#09F; margin:0 2px;}
+.pagelist a:hover,.pagelist-admin a:hover{background:#09F; color:#FFF; border-color:#09F; }
+.pagelist label,.pagelist-admin label{ padding-left:15px; color:#999;}
+.pagelist label b,.pagelist-admin label b{color:red; font-weight:normal; margin:0 3px;}
+.pagelist .rows{width:75px; height: 25px; border:none; position: relative;}
+.pagelist input,.pagelist-admin input{position: absolute; top: 0; left: 0;width: 40px; box-sizing: border-box; padding: 3px; text-align: center; height: 37px; border:1px solid #dfdfdf; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}
+.pagelist input:focus,.pagelist-admin input:focus{outline: none;}
+.pagelist button,.pagelist-admin button{position: absolute; top: 0; right: 0; height:37px; border:1px solid #dfdfdf; border-top-right-radius: 3px; border-bottom-right-radius: 3px;}
+.pagelist .count,.pagelist-admin .count{margin-left:3px; border:1px solid #dfdfdf;}

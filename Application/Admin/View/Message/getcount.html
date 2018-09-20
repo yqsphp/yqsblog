@@ -1,0 +1,51 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 访问量统计</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<table class="table table-hover text-center">
+		<tr>
+			<th>时间</th>
+			<th>总访问量</th>
+			<volist name="title" id="v">
+			<th><{$v}></th>
+			</volist>
+		</tr>
+		<tr style="background: gainsboro;">
+			<td>平台总访问量</td>
+			<td><{$znum[0]}></td>
+			<td><{$znum['baidu']}></td>
+			<td><{$znum['fenghuang']}></td>
+			<td><{$znum['meiyou']}></td>
+			<td><{$znum['sina']}></td>
+			<td><{$znum['tencent']}></td>
+			<td><{$znum['toutiao']}></td>
+			<td><{$znum['uc']}></td>
+			<td><{$znum['wangyi']}></td>
+			<td><{$znum['weixin']}></td>
+			<td><{$znum['yidian']}></td>
+			<td><{$znum['fuyi']}></td>
+		</tr>	
+		<volist name="num" id="v" key="k">
+		<tr>
+			<td><{$key}></td>
+			<td><{$v[0]}></td>
+			<td><{$v['baidu']}></td>
+			<td><{$v['fenghuang']}></td>
+			<td><{$v['meiyou']}></td>
+			<td><{$v['sina']}></td>
+			<td><{$v['tencent']}></td>
+			<td><{$v['toutiao']}></td>
+			<td><{$v['uc']}></td>
+			<td><{$v['wangyi']}></td>
+			<td><{$v['weixin']}></td>
+			<td><{$v['yidian']}></td>
+			<td><{$v['fuyi']}></td>
+		</tr>	
+		</volist>
+	</table>
+</div>
+<a class="button border-main" href="<{:U('hits_export')}>">导出</a>
+</body>
+</html>

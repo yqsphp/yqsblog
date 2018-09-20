@@ -1,0 +1,158 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 素材列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<!--搜索-->
+	<form action="" method="get" id="serachs">
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<li>搜索：</li>
+			<li>
+				<select name="wechat_id" class="input">
+					<option value="">微信号</option>
+					<volist name="user" id="v">
+					<option value="<{$v.id}>" <eq name="get['wechat_id']" value="$v['id']">selected</eq>><{$v.name}></option>
+					</volist>
+				</select>
+			</li>
+			<li>
+				<button type="submit" class="button border-main icon-search"> 搜索</button>
+				<button type="reset" id="resets" class="button border-main icon-search"> 重置</button>
+			</li>
+			<li>
+				<button type="button" class="refresh button border-main icon-refresh"> 刷新</button>
+				<font color="red" size="3">注意：刷新是从微信公众号获取数据同步本系统，请求限制为5次，当日剩余<b class="number"><{$number}></b>次</font>
+			</li>
+		</ul>
+	</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="3%">序号</th>
+			<th width="5%">素材媒体</th>
+			<th width="5%">素材个数</th>
+			<th width="5%">推送次数</th>
+			<th width="5%">微信号</th>
+			<th width="8%">创建时间</th>
+			<th width="8%">更新时间</th>
+			<th width="15%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.media_id}></td>
+			<td><{$v.sourse_num}></td>
+			<td><{$v.send_num}></td>
+			<td><{$v.wechat_name}></td>
+			<td><{$v.ctime}></td>
+			<td><{$v.utime}></td>
+			<td>
+				<div class="button-group">
+					<a class="button border-main icon-edit" onclick="loading()" href="<{:U('source_send',['id'=>$v['id'],'wechat_id'=>$v['wechat_id'],'media_id'=>$v['media_id']])}>"> 推送</a>
+					<if condition="$third['auth_check'] eq 1">
+					<a class="button border-main icon-edit" href="<{:U('source_check',['wechat_id'=>$v['wechat_id'],'source_id'=>$v['id']])}>"> 查看</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" onclick="sourceDel('<{:U('source_del',['wechat_id'=>$v['wechat_id'],'id'=>$v['id'],'media_id'=>$v['media_id']])}>')"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<if condition="$third['auth_delete'] eq 1">
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="15" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<!-- <a class="button border-main icon-edit" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 查看</a> -->
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="message()"> 删除</a>
+				</div>
+				<font color="red" size="3">由于公众号限制，一天只能推送列表素材中的一个，请慎重</font>
+			</td>
+        </tr>
+        </if>
+		<tr>
+			<td colspan="15">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+	//刷新
+	$(".refresh").click(function(){
+		var wechat_id = [<{$wechat_id}>];
+		$.ajax({
+			type:"post",
+			url:"<{:U('get_source')}>",
+			data:{'wechat_id':wechat_id},
+			sendBefore:loading(),
+			success:function(res){
+				if(res.code == 200){
+					$(".number").html(res.number);
+					success(res.message);
+					setTimeout(location.reload(),1000);
+				}else{
+					errors(res.message);
+				}
+				console.log(res);
+			}
+		});
+	});
+});
+//批量删除
+function message(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		$("#listform").attr('action','__CONTROLLER__/attdel');
+		$("#listform").submit();		
+	}
+	else{
+		errors("请选择的内容!");
+		return false;
+	}
+}
+//删除
+function sourceDel(url){
+	function jump(){
+		location.href = url;
+	}
+	warning(jump,"删除时公众号素材将同时被删除,请慎重！");
+}
+</script>
+</body>
+</html>

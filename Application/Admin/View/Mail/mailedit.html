@@ -1,0 +1,302 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader/webuploader.min.css" />
+<script src="__PUBLIC__/webuploader/webuploader.js"></script>
+<script src="__PUBLIC__/webuploader/uploadImgPreview.min.js"></script>
+<style type="text/css">
+	.logo-icon {
+		float: left;
+		width: 60px;
+		height: 50px;
+		border: 1px solid #ccc;
+	}
+	
+	._filelist li,
+	.attachlist li {
+		/*这个选择器一定要有宽高，否则图片显示不出来，因为它里面的内容是绝对定位的*/
+		width: 180px;
+		height: 160px;
+	}
+	
+	#select_attach {
+		width: 100px;
+		display: block;
+		height: 41.5px;
+		line-height: 41.5px;
+		border-radius: 7px;
+	}
+	
+	.button-uploas>div {
+		float: left;
+	}
+	
+	.attach-img {
+		width: 100%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.attach-txt {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0px;
+		cursor: default;
+		margin-top: -24px;
+	}
+</style>
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>
+  	<if condition="$status eq 1">增加<else />修改</if>邮件</strong></div>
+		<div class="body-content">
+			<form method="post" id="myform" class="form-x" action="<{:U('mailedit',['status'=>$status,'id'=>$id])}>" enctype="multipart/form-data">
+				<input type="hidden" name="type" value="<{$status}>" />
+				<div class="form-group">
+					<div class="label">
+						<label>发件人：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50" id="from" value="<{$info.sendfrom}>" name="sendfrom" placeholder="请输入发件人邮箱" data-validate="required:请输入发件人邮箱" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>收件人：</label>
+					</div>
+					<div class="field">
+						<div class="field">
+							<textarea class="input" name="sendto" id="to" placeholder="请输入收件人邮箱，多个以‘，’分割" style="height:90px;"><{$info.sendto}></textarea>
+							<div class="tips"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>抄送人：</label>
+					</div>
+					<div class="field">
+						<div class="field">
+							<textarea class="input" name="sendcopy" placeholder="请输入抄送人邮箱，多个以‘，’分割;如果不需要可以不填" style="height:90px;"><{$info.sendbcc}></textarea>
+							<div class="tips"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>密送人：</label>
+					</div>
+					<div class="field">
+						<div class="field">
+							<textarea class="input" name="sendcopy" placeholder="请输入密送人邮箱，多个以‘，’分割;如果不需要可以不填" style="height:90px;"><{$info.sendcopy}></textarea>
+							<div class="tips"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>标题：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="titles" name="subject" value="<{$info.subject}>" placeholder="请输入邮件标题" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>内容：</label>
+					</div>
+					<div class="field">
+						<textarea id="kindeditor" name="content" class="input" style="height:450px; border:1px solid #ddd;"><{$info.content}></textarea>
+						<script src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+						<script>
+							KindEditor.ready(function(K) {
+								window.editor = K.create("#kindeditor", {
+									allowFileManager: true,
+									afterBlur: function() { //失去焦点获取textareea的值
+										this.sync();
+									}
+								});
+							});
+						</script>
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="form-group">
+					<div class="label">
+						<label>附件集：</label>
+					</div>
+					<div class="field">
+						<div class="button-uploas">
+							<div>
+								<a type="button" class="btn bg-blue margin-left" id="select_attach" style="padding: 0;">+ 浏览上传</a>
+							</div>
+							<div><button type="button" class="button bg-blue margin-left" id="upload_now">开始上传</button></div>
+							<div class="padding">单个文件上传大小，默认2M</div>
+						</div>
+						<div class="clear"></div>
+						<div class="margin">
+							<ul class="attachlist">
+								<if condition="!empty($info['attach'])">
+									<volist name="info['attach']" id="v">
+										<li>
+											<p class="title">
+												<{$v.name}>
+											</p>
+											<p class="imgWrap">
+												<if condition="in_array($v['ext'],['jpg','png','gif','jpeg','bmp'])">
+													<img class="attach-img" src="__PUBLIC__/<{$v.path}>" />
+													<else />
+													<div class="attach-txt">
+														您上传的<b> <{$v.name}> </b>文件不支持预览！
+													</div>
+												</if>
+											</p>
+											<p class="progress"></p>
+											<span class="success"></span>
+											<div class="file-panel">
+												<span class="cancel attach-cancel" id="<{$v.id}>">删除</span>
+											</div>
+										</li>
+									</volist>
+								</if>
+							</ul>
+						</div>
+						<div id="uploader" class="margin padding-top"></div>
+						<input type="hidden" name="attachid" id="attachid" value="" />
+					</div>
+					<script>
+						$(function() {
+							var uploader = uploadImage({
+								wrap: jQuery("#uploader"), //包裹整个上传控件的元素，必须。可以传递dom元素、选择器、jQuery对象
+								/*预览图片的宽度，可以不传，如果宽高都不传则为包裹预览图的元素宽度，高度自动计算*/
+								//width: "160px", 
+								height: 100, //预览图片的高度
+								auto: false, //是否自动上传
+								method: "POST", //上传方式，可以有POST、GET
+								sendAsBlob: false, //是否以二进制流的形式发送
+								viewImgHorizontal: true, //预览图是否水平垂直居中
+								fileVal: "file", // [默认值：'file'] 设置文件上传域的name。
+								btns: { //必须
+									uploadBtn: null, //开始上传按钮，必须。可以传递dom元素、选择器、jQuery对象
+									retryBtn: $("#upload_now"), //用户自定义"重新上传"按钮
+									chooseBtn: '#select_attach', //"选折图片"按钮，必须。可以传递dom元素、选择器、jQuery对象
+									chooseBtnText: "选择文件" //选择文件按钮显示的文字
+								},
+								pictureOnly: false, //只能上传图片
+								datas: {
+									//"uuid": new Date().getTime()
+								}, //上传的参数,如果有参数则必须是一个对象
+								// 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！false为不压缩
+								resize: false,
+								//是否可以重复上传，即上传一张图片后还可以再次上传。默认是不可以的，false为不可以，true为可以
+								duplicate: false,
+								multiple: true, //是否支持多选能力
+								swf: "Uploader.swf", //swf文件路径，必须
+								url: "<{:U('attachment/attach_upload')}>", //图片上传的路径，必须
+								maxFileNum: 20, //最大上传文件个数
+								maxFileTotalSize: 10485760, //最大上传文件大小，默认10M
+								maxFileSize: 2097152, //单个文件最大大小，默认2M
+								showToolBtn: true, //当鼠标放在图片上时是否显示工具按钮,
+								//当有图片进来后所处理函数
+								onFileAdd: function() {},
+								onDelete: null, //当预览图销毁时所处理函数
+								/*当单个文件上传失败时执行的函数，会传入当前显示图片的包裹元素，以便用户操作这个元素*/
+								uploadFailTip: null,
+								//上传出错时执行的函数
+								onError: null,
+								notSupport: null, //当浏览器不支持该插件时所执行的函数
+								/*当上传成功（此处的上传成功指的是上传图片请求成功，并非图片真正上传到服务器）后所执行的函数，会传入当前状态及上一个状态*/
+								onSuccess: null,
+								callback: function(e, res) {
+									console.log(res);
+									var attach = $("#attachid").val();
+									if(res != false) {
+										if(attach) {
+											$("#attachid").val(attach + ',' + res);
+										} else {
+											$("#attachid").val(res);
+										}
+									}
+
+								}
+							});
+							/*如果按钮开始是隐藏的，经过触发后才显示，则可以用这个方法重新渲染下*/
+							//uploader.refresh();//该方法可以重新渲染选择文件按钮
+							//uploader.upload();//调用该方法可以直接上传图片
+							//uploader.retry();//调用该方法可以重新上传图片
+							$(".attachlist li").hover(
+								function() {
+									$(this).children("div.file-panel").animate({
+										"height": "30px"
+									}, 300);
+								},
+								function() {
+									$(this).children("div.file-panel").animate({
+										"height": "0"
+									}, 300);
+								}
+							);
+							//删除已上传的附件
+							$(".attach-cancel").click(function() {
+								var that = $(this);
+								var id = that.attr("id"); //附件id
+								$.ajax({
+									type: "post",
+									url: "<{:U('attachment/attach_delete')}>",
+									data: {
+										"id": id
+									},
+									success: function(res) {
+										if(res == 1) {
+											that.parent().parent().remove();
+										}
+										console.log(res);
+									}
+								});
+							});
+						});
+					</script>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<button class="button bg-main icon-check-square-o" type="button" onclick="send(1)"> 保存</button>
+						<button class="button bg-main icon-send-o" type="button" onclick="send(2)"> 发送</button>
+						<button class="button bg-red icon-mail-reply" type="button" onclick="history.back()"> 撤销</button>
+					</div>
+				</div>
+				<input type="hidden" name="id" value="<{$info.id}>" />
+				<input type="hidden" name="issend" id="issend" value="<{$info.issend}>" />
+			</form>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			$('.radio label').each(function() {
+				var e = $(this);
+				e.click(function() {
+					e.closest('.radio').find("label").removeClass("active");
+					e.addClass("active");
+				});
+			});
+		});
+		// 1.只保存不发送 ,2.保存并发送
+		function send(type) {
+			loading();
+			type == 1 ? $("#issend").val(0) : $("#issend").val(1);
+			if($("#to").val() == '' || $("#titles").val() == '' || $("#from").val() == '') {
+				errors("发件人或收件人或标题不能为空");
+				return false;
+			} else {
+				$("#myform").submit();
+			}
+		}
+	</script>
+</body>
+
+</html>

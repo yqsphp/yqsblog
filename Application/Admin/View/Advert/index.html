@@ -1,0 +1,150 @@
+<include file="Public/header" />
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head">
+			<strong class="icon-reorder"> 广告位列表</strong>
+			<a href="" style="float:right; display:none;">添加字段</a>
+		</div>
+		<form action="" method="get" id="serachs">
+			<div class="padding border-bottom">
+				<ul class="search" style="padding-left:10px;">
+					<if condition="$third['auth_add'] eq 1">
+						<li>
+							<a class="button border-main icon-plus-square-o" href="<{:U('advert_edit',array('status'=>1))}>"> 添加广告位</a>
+						</li>
+					</if>
+					<li>搜索：</li>
+					<li>
+						<select name="cate" class="input" style="line-height:17px;">
+							<option value="">请选择分类</option>
+							<option value="1" <if condition="$get['cate'] eq 1">selected</if>>轮播图</option>
+							<option value="2" <if condition="$get['cate'] eq 2">selected</if>>左侧侧边栏</option>
+							<option value="3" <if condition="$get['cate'] eq 3">selected</if>>右侧侧边栏</option>
+							<option value="4" <if condition="$get['cate'] eq 4">selected</if>>中间栏</option>
+							<option value="5" <if condition="$get['cate'] eq 5">selected</if>>底部（二维码等）</option>
+						</select>
+					</li>
+					<li>
+						<input type="text" placeholder="请输入搜索关键字" name="name" class="input" style="width:250px; line-height:17px;display:inline-block" value="<if condition=" !empty($get[ 'name']) "><{$get['name']}></if>"/>
+						<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+					</li>
+					<li><input type="reset" id="resets" class="button border-main icon-search" value="重置" /></li>
+				</ul>
+			</div>
+		</form>
+		<form method="post" action="<{:U('artdel')}>" id="listform">
+			<table class="table table-hover text-center">
+				<tr>
+					<th width="3%">序号</th>
+					<th width="10%">广告位名称</th>
+					<th width="15%">图片</th>
+					<th width="10%">宽度</th>
+					<th width="15%">高度</th>
+					<th width="20%">跳转地址</th>
+					<th width="5%">显示</th>
+					<th width="10%">分类</th>
+					<th width="20%">操作</th>
+				</tr>
+				<volist name="info" id="v">
+					<tr>
+						<td>
+							<{$i}>
+						</td>
+						<td>
+							<{$v.name}>
+						</td>
+						<td width="10%">
+							<img src="<if condition=" $v[ 'image'] neq '' ">__PUBLIC__/<{$v.image}><else /><{:C('DEFAULT_IMG')}></if>" alt="" width="70" height="50" />
+						</td>
+						<td>
+							<{$v['width'] == 0 ? '默认' :　v['width']}>
+						</td>
+						<td>
+							<{$v['height'] == 0 ? '默认' :　v['height']}>
+						</td>
+						<td>
+							<a title="<{$v.name}>" href="<{$v.url}>">
+								<{$v.url}>
+							</a>
+						</td>
+						<td>
+							<select onchange="setTop(<{$v.id}>,this.value)">
+								<option value="1" <eq name="v['isshow']" value="1">selected</eq>>是</option>
+								<option value="0" <eq name="v['isshow']" value="0">selected</eq>>否</option>
+							</select>
+						</td>
+						<td>
+							<switch name="v.cate">
+								<case value="1">轮播图</case>
+								<case value="2">左侧侧边栏</case>
+								<case value="3">右侧侧边栏</case>
+								<case value="4">中间栏</case>
+								<case value="5">底部（二维码等）</case>
+							</switch>
+						</td>
+						<td>
+							<div class="button-group">
+								<if condition="$third['auth_edit'] eq 1">
+									<a class="button border-main edit" href="<{:U('advert_edit',['status'=>2,'id'=>$v['id']])}>">
+										<span class="icon-edit"></span> 修改</a>
+								</if>
+								<if condition="$third['auth_delete'] eq 1">
+									<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+										<span class="icon-trash-o"></span> 删除</a>
+								</if>
+							</div>
+						</td>
+					</tr>
+				</volist>
+				<tr>
+					<td colspan="9">
+						<div class="pagelist-admin">
+							<{$page}>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<script type="text/javascript">
+		//搜索
+		function changesearch() {
+			$('#serachs').submit();
+		}
+		function setTop(id,status){
+			var data = {id:id,isshow:status};
+			$.ajax({
+				type:"post",
+				url:"<{:U('setup')}>",
+				data:data,
+				success:function(res){
+					console.log(res);
+				}
+			});
+		}
+		$(function() {
+			//删除
+			$(".delete").click(function() {
+				id = $(this).attr('id');
+
+				function jumps() {
+					location.href = "__CONTROLLER__/advert_del/id/" + id;
+				}
+				warning(jumps);
+			});
+			//编辑
+			$(".edit").click(function() {
+				id = $(this).attr('id');
+				location.href = "__CONTROLLER__/advert_edit/status/2/id/" + id;
+			});
+			//重置
+			$("#resets").click(function() {
+				$(".input").val("");
+				$(".input").find("option").removeAttr("selected");
+			});
+		});
+	</script>
+</body>
+
+</html>

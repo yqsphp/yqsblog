@@ -1,0 +1,26 @@
+<if condition="empty($list)">
+	凉菜了
+<else />
+<volist name="list" id="v">
+<article class="am-g blog-entry-article">
+	<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+		<if condition="$v['image']">
+		<img src="__PUBLIC__/<{$v.image}>" class="am-u-sm-12">
+		<else />
+		<img src="<{:C('DEFAULT_IMG')}>" class="am-u-sm-12">
+		</if>
+	</div>
+	<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+		<div>
+			<a class="blog-color"><{$v.catname}> &nbsp;</a>
+			<{$v.editor}> &nbsp;<{$v.ptime}>
+		</div>
+		<h2 class="blog-line-clamp-1"><a href="<{:getArticleUrl($v['catid'],$v['id'],2)}>" title="<{$v.name}>"><{$v.name}></a></h2>
+		<p class="blog-line-clamp-5"><{$v.description}></p>
+	</div>
+</article>
+</volist>
+<div class="pagelist">
+	<{$page}>
+</div>
+</if>

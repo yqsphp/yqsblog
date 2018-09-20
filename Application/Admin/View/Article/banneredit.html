@@ -1,0 +1,128 @@
+<include file="Public/header" />
+<script type="text/javascript">
+	$(function() {
+		$('.radio label').each(function() {
+			var e = $(this);
+			e.click(function() {
+				e.closest('.radio').find("label").removeClass("active");
+				e.addClass("active");
+			});
+			$("#bttn").click(function() {
+				if($(".name").val() === "") {
+					$(".name").css('border', '1px solid red');
+					$(".tipsname").html("内容不能为空").css('color', 'red');
+					return false;
+				} else {
+					$("from").submit();
+				}
+			});
+		});
+	});
+</script>
+<style>
+	.a {
+		overflow-y: scroll;
+	}
+</style>
+
+<body>
+	<div class="panel admin-panel margin-top">
+		<div class="panel-head" id="add"><strong>
+  	<span class="icon-pencil-square-o"></span><if condition="$status eq 1">添加<else />修改</if>轮播图</strong>
+		</div>
+		<div class="body-content">
+			<form method="post" class="form-x" enctype="multipart/form-data" action="<{:U('__CONTROLLER__/banneredit/status/'.$status)}>">
+				<input type="hidden" name="type" value="<{$status}>" />
+				<input type="hidden" name="cate" value="1" />
+				<input type="hidden" name="id" value="<{$info.id}>" />
+				<div class="form-group">
+					<div class="label">
+						<label>图片名：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50 name" name="name" value="<{$info.name}>" />
+						<div class="tipsname"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>栏目图片：</label>
+					</div>
+					<div class="field">
+						<input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"> <span style="color: red;">图片规格：1440*490</span>
+						<div class="logo-icon" style="margin: 18px 0 0 10px;">
+							<img src="<if condition=" $info[ 'path'] neq '' ">__PUBLIC__/<{$info.path}>
+        			<else /><{:C('DEFAULT_IMG')}></if>" width="432" height="147" />
+						</div>
+						<input type="file" name="file" id="file" style="display:none" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>显示：</label>
+					</div>
+					<div class="field">
+						<div class="button-group radio">
+							<if condition="isset($info['status'])">
+								<label class="button <if condition=" $info[ 'status'] eq 1 ">active</if>">
+						         	 <span class="icon icon-check"></span>             
+						             <input name="status" value="1" type="radio" <if condition="$info['status'] eq 1">checked</if>>是             
+						        </label>
+
+								<label class="button <if condition=" $info[ 'status'] eq 0 ">active</if>"><span class="icon icon-times"></span>          	
+						            <input name="status" value="0"  type="radio" <if condition="$info['status'] eq 0">checked</if>>否
+						        </label>
+							<else />
+								<label class="button active">
+						         	<span class="icon icon-check"></span>             
+						            <input name="status" value="1" type="radio" checked>是             
+						        </label>
+
+								<label class="button "><span class="icon icon-times"></span>          	
+						            <input name="status" value="0"  type="radio">否
+						        </label>
+							</if>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<a href="javascript:history.back()" class="button bg-yellow icon-backward"> 返回</a>
+						<button class="button bg-main icon-check-square-o" id="bttn"> 提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#image1").click(function() {
+			$("#file").click();
+		});
+		//文件上传预览
+		$("#file").change(function() {
+			//在重新点击上传附件移除所有img的元素
+			$(".logo-icon").children('img').remove();
+			// 得到一个参考文件列表
+			var files = !!this.files ? this.files : [];
+			// 如果没有选择任何文件,或者没有FileReader支持,返回
+			if(!files.length || !window.FileReader) return;
+			// 只有选择的文件是一个image才显示
+			//if (/^image/.test( files[i].type)){}
+			$.each(files, function(i) {
+				// 创建一个新的FileReader的实例
+				var reader = new FileReader();
+				reader.readAsDataURL(files[i]);
+				// 当加载时,图像数据
+				reader.onloadend = function() {
+					img = "<img src='" + this.result + "' width=432 height=147/> &nbsp;";
+					$(".logo-icon").append(img);
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

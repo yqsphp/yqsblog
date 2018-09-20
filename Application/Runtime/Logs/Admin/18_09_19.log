@@ -1,0 +1,2165 @@
+[ 2018-09-19T17:21:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: auth_id E:\www\myblog\Application\Admin\Common\AdminBaseController.class.php 第 15 行.
+
+[ 2018-09-19T17:21:36+08:00 ] 127.0.0.1 /login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:21:36+08:00 ] 127.0.0.1 /Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:21:37+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:21:42+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+
+[ 2018-09-19T17:21:42+08:00 ] 127.0.0.1 /Login/verify.html?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:21:44+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+
+[ 2018-09-19T17:21:44+08:00 ] 127.0.0.1 /Login/verify.html??
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:21:53+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `myblog_admin` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `myblog_admin` SET `lastip`='127.0.0.1',`lasttime`='2018-09-19 17:21:53' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2018-09-19T17:21:59+08:00 ] 127.0.0.1 /Login/verify.html???
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:05+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+
+[ 2018-09-19T17:22:05+08:00 ] 127.0.0.1 /Login/verify.html????
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:08+08:00 ] 127.0.0.1 /Login/verify.html?????
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:12+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `myblog_admin` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `myblog_admin` SET `lastip`='127.0.0.1',`lasttime`='2018-09-19 17:22:12' WHERE `id` = 1 [ RunTime:0.0000s ]
+
+[ 2018-09-19T17:22:17+08:00 ] 127.0.0.1 /Login/verify.html??????
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:18+08:00 ] 127.0.0.1 /Login/verify.html???????
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-19T17:22:21+08:00 ] 127.0.0.1 /Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `myblog_admin` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `myblog_admin` SET `lastip`='127.0.0.1',`lasttime`='2018-09-19 17:22:21' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2018-09-19T17:22:21+08:00 ] 127.0.0.1 /Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: auth_id E:\www\myblog\Application\Admin\Common\AdminBaseController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0080s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:22+08:00 ] 127.0.0.1 /Index/conf.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: auth_id E:\www\myblog\Application\Admin\Common\AdminBaseController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0110s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /attachment/attach/auth_id/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_attachment` WHERE ( myblog_attachment.isdel = 0 ) LIMIT 1   [ RunTime:0.0200s ]
+SQL: SELECT myblog_attachment.*,art.name as title FROM `myblog_attachment` left JOIN myblog_article as art on art.id = myblog_attachment.aid  WHERE ( myblog_attachment.isdel = 0 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 81 行.
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /Public/upload/20180809/1533775596423.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /Public/upload/20180809/1533775623909.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /Public/upload/20180808/1533718441704.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /Public/upload/20180808/1533718474332.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:26+08:00 ] 127.0.0.1 /Public/upload/20180808/1533718704364.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:27+08:00 ] 127.0.0.1 /Public/upload/20180809/1533775646320.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:27+08:00 ] 127.0.0.1 /Public/upload/20180809/1533775670942.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:27+08:00 ] 127.0.0.1 /Public/upload/20180808/1533716795219.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:27+08:00 ] 127.0.0.1 /Public/upload/20180808/1533716891237.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:22:27+08:00 ] 127.0.0.1 /Public/upload/20180808/1533717418860.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:22:34+08:00 ] 127.0.0.1 /Attachment/attedit/status/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: auth_id E:\www\myblog\Application\Admin\Common\AdminBaseController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: id E:\www\myblog\Application\Admin\Controller\AttachmentController.class.php 第 129 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: id E:\www\myblog\Application\Runtime\Cache\Admin\322415f9d4436df4b0d9abafe79544fd.php 第 74 行.
+NOTIC: [8] Undefined variable: info E:\www\myblog\Application\Runtime\Cache\Admin\322415f9d4436df4b0d9abafe79544fd.php 第 80 行.
+NOTIC: [8] Undefined variable: info E:\www\myblog\Application\Runtime\Cache\Admin\322415f9d4436df4b0d9abafe79544fd.php 第 90 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /attachment/attach/auth_id/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_attachment` WHERE ( myblog_attachment.isdel = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT myblog_attachment.*,art.name as title FROM `myblog_attachment` left JOIN myblog_article as art on art.id = myblog_attachment.aid  WHERE ( myblog_attachment.isdel = 0 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 81 行.
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532408693527.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532409222526.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532408738863.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532414016874.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532414065137.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532409229715.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532414124994.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415133956.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532414253200.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:47+08:00 ] 127.0.0.1 /Public/upload/20180724/1532414130392.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Attachment/attach/auth_id/68/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_attachment` WHERE ( myblog_attachment.isdel = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT myblog_attachment.*,art.name as title FROM `myblog_attachment` left JOIN myblog_article as art on art.id = myblog_attachment.aid  WHERE ( myblog_attachment.isdel = 0 ) ORDER BY ctime desc LIMIT 10,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 81 行.
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415138237.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415180870.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415197862.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415775661.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415827322.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415866458.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415871585.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415820765.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:49+08:00 ] 127.0.0.1 /Public/upload/20180724/1532416311863.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:50+08:00 ] 127.0.0.1 /Public/upload/20180724/1532415203420.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Attachment/attach/auth_id/68/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_attachment` WHERE ( myblog_attachment.isdel = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT myblog_attachment.*,art.name as title FROM `myblog_attachment` left JOIN myblog_article as art on art.id = myblog_attachment.aid  WHERE ( myblog_attachment.isdel = 0 ) ORDER BY ctime desc LIMIT 20,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 81 行.
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180724/1532416317830.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180724/1532416322161.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180723/1532336603757.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180723/1532336594313.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180724/1532416343391.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180723/1532336574649.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180724/1532416342895.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180723/1532336612453.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:24:52+08:00 ] 127.0.0.1 /Public/upload/20180723/1532336613584.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:26:03+08:00 ] 127.0.0.1 /attachment/attach/auth_id/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_attachment` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_attachment` WHERE ( myblog_attachment.isdel = 0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT myblog_attachment.*,art.name as title FROM `myblog_attachment` left JOIN myblog_article as art on art.id = myblog_attachment.aid  WHERE ( myblog_attachment.isdel = 0 ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 81 行.
+NOTIC: [8] Undefined variable: get E:\www\myblog\Application\Runtime\Cache\Admin\9348efd2eeec0e38c3806d975f068f5c.php 第 82 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:28:09+08:00 ] 127.0.0.1 /index/clearCache/auth_id/99.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined offset: 0 E:\www\myblog\Application\Admin\Controller\IndexController.class.php 第 86 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:28:13+08:00 ] 127.0.0.1 /log/index/auth_id/65.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_log` [ RunTime:0.0060s ]
+SQL: show table STATUS [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`name` FROM `myblog_admin` WHERE ( status = 1 )  [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_log` WHERE ( 1 = 1  ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `myblog_log` WHERE ( 1 = 1  ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: p E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 76 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: start E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 87 行.
+NOTIC: [8] Undefined index: end E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 89 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 99 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 100 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 101 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 102 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:28:53+08:00 ] 127.0.0.1 /log/logdel.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: auth_id E:\www\myblog\Application\Admin\Common\AdminBaseController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0070s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_log` [ RunTime:0.0080s ]
+SQL: DELETE FROM `myblog_log` WHERE ( id in (4,5,6,7,1,2,3) ) [ RunTime:0.0530s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:28:54+08:00 ] 127.0.0.1 /log/index/auth_id/65.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0060s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM myblog_auth_access a INNER JOIN myblog_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_group` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_access` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_auth_rule` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `myblog_auth_rule`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Admin\Common\Tree::tree(), called in E:\www\myblog\Application\Admin\Model\AdminModel.class.php on line 68 and defined E:\www\myblog\Application\Admin\Common\Tree.class.php 第 97 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined index:  E:\www\myblog\Application\Admin\Common\Tree.class.php 第 116 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+NOTIC: [8] Undefined variable: title E:\www\myblog\Application\Admin\Common\Tree.class.php 第 109 行.
+SQL: SHOW COLUMNS FROM `myblog_log` [ RunTime:0.0070s ]
+SQL: show table STATUS [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `myblog_admin` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name` FROM `myblog_admin` WHERE ( status = 1 )  [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_log` WHERE ( 1 = 1  ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `myblog_log` WHERE ( 1 = 1  ) ORDER BY ctime desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: p E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 76 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: uid E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 81 行.
+NOTIC: [8] Undefined index: start E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 87 行.
+NOTIC: [8] Undefined index: end E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 89 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 99 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 100 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 101 行.
+NOTIC: [8] Undefined index: type E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 102 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+NOTIC: [8] Undefined index: tables E:\www\myblog\Application\Runtime\Cache\Admin\2b4cb611afdbb12eca63b3e3ba9c0912.php 第 109 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:30:12+08:00 ] 127.0.0.1 /backups/backups/auth_id/49.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: show table status [ RunTime:0.0110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:30:16+08:00 ] 127.0.0.1 /Backups/optimize.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW TABLES  [ RunTime:0.0020s ]
+SQL: optimize table myblog_admin,myblog_advert,myblog_article,myblog_attachment,myblog_auth_access,myblog_auth_group,myblog_auth_rule,myblog_category,myblog_city,myblog_link,myblog_log,myblog_log_content,myblog_mail,myblog_message,myblog_recover,myblog_sitemap,myblog_tree,myblog_wechat_account,myblog_wechat_menu,myblog_wechat_reply,myblog_wechat_resource,myblog_wechat_resource_list [ RunTime:0.5860s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:30:18+08:00 ] 127.0.0.1 /backups/backups/auth_id/49.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: show table status [ RunTime:0.0140s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-09-19T17:31:18+08:00 ] 127.0.0.1 /backups/backups/auth_id/49.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: show table status [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+NOTIC: [8] Undefined index: vols_length E:\www\myblog\Application\Runtime\Cache\Admin\08c8e6584113c61cda07ba4e1c6602e7.php 第 123 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

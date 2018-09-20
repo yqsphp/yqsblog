@@ -1,0 +1,183 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 关键字列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<if condition="$third['auth_add'] eq 1">
+				<li><a class="button border-main icon-plus-square-o" href="<{:U('wechatReply/keyedit',array('status'=>1))}>"> 添加内容</a></li>
+				</if>
+				<li>搜索：</li>
+				<li>
+				<select name="replytype" class="input" style="line-height:17px;">
+					<option value="">回复类别</option>
+					<option value="1" <eq name="get['replytype']" value="1">selected</eq>>图文</option>
+					<option value="2" <eq name="get['replytype']" value="2">selected</eq>>文本</option>
+					<!--<option value="3" <eq name="get['replytype']" value="3">selected</eq>>图片</option>
+					<option value="4" <eq name="get['replytype']" value="4">selected</eq>>语音</option>
+					<option value="5" <eq name="get['replytype']" value="5">selected</eq>>视频</option>-->
+					</volist>
+				</select>
+				</li>
+				<li>
+				<select name="isenable" class="input" style="line-height:17px;">
+					<option value="">是否启用</option>
+					<option value="1" <eq name="get['isenable']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="get['isenable']" value="0">selected</eq>>否</option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<input type="text" placeholder="请输入搜索关键字" name="keyword" class="input" 
+					style="width:250px; line-height:17px;display:inline-block" value="<if condition="!empty($get['keyword'])"><{$get['keyword']}></if>"/>
+				<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+				</li>
+				<li><input type="reset" id="resets" class="button border-main icon-search"  value="重置"/></li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="<{:U('keydel')}>" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th>序号</th>
+			<th>关键字</th>
+			<th>回复类别</th>
+			<th>启用状态</th>
+			<th>密钥</th>
+			<th width="30%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.keyword}></td>
+			<td>
+				<if condition="$v['replytype'] eq 1">
+				图文
+				<elseif condition="$v['replytype'] eq 2" />
+				文本
+				</if>
+			<td><if condition="$v['isenable'] eq 1">是<else />否</if></td>
+			<td><{$v.token}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main edit" href="<{:U('keyedit',['status'=>2,id=>$v['id']])}>">
+						<span class="icon-edit"></span> 修改</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="8" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="artSelect(0)"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="8">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/artdel/id/"+id;
+		}
+		warning(jumps);
+		/*if(confirm("确定删除吗？")){
+			id=$(this).attr('id');
+			location.href="__CONTROLLER__/artdel/id/"+id;
+		}*/
+	});
+	//排序设置
+	$("input[name='sort']").blur(function(){
+		var sort = $(this).val();
+		var id   = $(this).attr("id");
+		$.ajax({
+			type:"post",
+			url:"<{:U('article/artsort')}>",
+			data:{"id":id,"sort":sort},
+			success:function(res){
+				console.log(res);
+			}
+		});
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").removeAttr("value");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+//批量删除或提交 0：删除，1：提交
+function artSelect(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		var url="";
+		if(status==0){
+			function sumit(){
+				url='artdel/status/'+status;
+				$("#listform").attr('action','__CONTROLLER__/'+url);
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}else{
+			url='artpublish/edit/1/status/0';
+			$("#listform").attr('action','__CONTROLLER__/'+url);
+			$("#listform").submit();
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 数据备份列表</strong></div>
+  <!-- <div class="padding border-bottom">
+    <button type="button" class="button border-main" onclick="exports()">
+    	<span class="icon-plus-square-o"></span> 数据备份</button>
+  </div> -->
+  <table class="table table-hover text-center">
+    <tr>
+      <th width="5%">序号</th>
+      <th width="15%">名称</th>
+      <th width="10%">备份时间</th>
+      <th width="5%">大小</th>
+      <th width="5%">分卷记录</th>
+      <th width="15%">操作</th>
+    </tr>
+    <volist name="backups" id="v">
+    <tr>
+      <td><{$i}></td>
+      <td><a href="#" class="<{$v['vols_length']>1?'disp':''}>">
+      	<span class="<{$v['vols_length']>1?'icon-plus':''}>"></span> 
+      	<{$v.name}></a>
+      </td>
+      <td><{$v.date_str}></td>
+      <td><{$v.total_size}></td>
+      <td><{$v['vols_length']>1?'有':'无'}></td>
+      <td>
+      	<div class="button-group"> 
+	      	<a class="button border-main" href="<{:U('Backups/import',['backup'=>$v['name']])}>" onclick="restore();">
+	      		<span class="icon-edit"></span> 还原</a> 
+	      	<a class="button border-main" href="<{:U('Backups/download',array('file'=>$v['name']))}>">
+      		<span class="icon-cloud-download"></span> 下载</a> 
+		  		<a class="button border-red icon-trash-o" data-url="<{:U('Backups/del_backups',['backup'=>$v['name']])}>" href="javascript:void(0)" onclick="del(this)"
+	  			<span class="icon-trash-o"></span> 删除</a> 
+      	</div>
+      </td>
+    </tr>
+    <if condition="$v['vols_length'] gt 1">
+    	<volist name="v['vols']" id="vo">
+	    <tr class="juanchild" style="display:none">
+	      <td>卷<{$vo.vol}></td>
+	      <td><{$vo.file}></td>
+	      <td><{$v.date_str}></td>
+	      <td><{$vo.size}></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    </volist>
+    </if>
+    </volist>
+  </table>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".disp").toggle(function(){
+		$(this).children().addClass("icon-minus").removeClass("icon-plus");
+		$(".juanchild").show();		
+	},function(){
+		$(this).children().addClass("icon-plus").removeClass("icon-minus");
+		$(".juanchild").hide();
+	});
+});
+function del(obj){
+	function dels(){
+		location.href=$(obj).attr("data-url");
+	}
+	warning(dels);
+}
+function restore(file){
+	function imports(){
+		location.href="<{:U('Backups/import')}>/backup/"+file;
+	}
+	warning(imports,'确定');
+}
+function exports(){
+	loading();
+	location.href="<{:U('Sqlmanager/export')}>";
+}
+</script>
+</body>
+</html>

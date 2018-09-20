@@ -1,0 +1,250 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 内容列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<!--搜索-->
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<li>搜索：</li>
+				<li>
+					<select name="catid" class="input" style="line-height:17px;">
+						<option value="">请选择分类</option>
+						<volist name="cat" id="vo">
+							<option value="<{$vo.id}>"<eq name="get['catid']" value="$vo.id">selected</eq>><{$vo._name}></option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<select name="portshow" class="input" style="line-height:17px;">
+						<option value="">显示终端</option>
+						<option value="电脑端" <eq name="get['portshow']" value="电脑端">selected</eq>>电脑端</option>
+						<option value="移动端" <eq name="get['portshow']" value="移动端">selected</eq>>移动端</option>
+						<option value="微信端" <eq name="get['portshow']" value="微信端">selected</eq>>微信端</option>
+						<option value="APP端" <eq name="get['portshow']" value="APP端">selected</eq>>APP端</option>
+						<option value="小程序端" <eq name="get['portshow']" value="小程序端">selected</eq>>小程序端</option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<select name="porttype" class="input" style="line-height:17px;">
+						<option value="">显示方式</option>
+						<option value="置顶" <eq name="get['porttype']" value="置顶">selected</eq>>置顶</option>
+						<option value="推荐" <eq name="get['porttype']" value="推荐">selected</eq>>推荐</option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<select name="status" class="input" style="line-height:17px;">
+						<option value="">状态</option>
+						<option value="1" <eq name="get['status']" value="1">selected</eq>>已发布</option>
+						<option value="0" <eq name="get['status']" value="0">selected</eq>>未发布</option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<input type="text" placeholder="请输入搜索关键字" name="name" class="input" 
+					style="width:250px; line-height:17px;display:inline-block" 
+					value="<neq name="get['name']" value=""><{$get['name']}></neq>"/>
+					<button href="javascript:void(0)" type="submit" class="button border-main icon-search"> 搜索</button>
+					<button href="javascript:void(0)" type="reset" id="resets" class="button border-main icon-search"> 重置</button>
+				</li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="3%">序号</th>
+			<th width="3%">排序</th>
+			<th width="13%">缩略图</th>
+			<th width="10%">标题</th>
+			<th>分类</th>
+			<th width="10%">发布时间</th>
+			<th>置顶</th>
+			<th>推荐</th>
+			<th>终端显示</th>
+			<th>状态</th>
+			<th width="8%">编辑人</th>
+			<th width="15%">操作</th>
+		</tr>
+		<volist name="list" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td>
+				<input type="text" name="sort[1]" value="<{$v.order}>" onblur="setTop(5,<{$v.id}>,this.value)" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;"/>
+			</td>
+			<td width="10%">
+				<img src="<if condition="$v['image'] neq ''">__PUBLIC__/<{$v.image}><else /><{:C('DEFAULT_IMG')}></if>" alt="" width="70" height="50"/>
+			</td>
+			<td>
+				<a title="<{$v.name}>">
+					<if condition="strlen($v['name']) gt 50">
+					<{$v.name|mb_substr=0,15,'utf-8'}>...
+					<else />
+					<{$v.name}>
+					</if>
+				</a>
+			</td>
+			<td><{$v.cname}></td>
+			<td><{$v.ptime}></td>
+			<td>
+				<select onchange="setTop(1,<{$v.id}>,this.value)">
+					<option value="1" <eq name="v['settop']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="v['settop']" value="0">selected</eq>>否</option>
+				</select>
+			</td>
+			<td>
+				<select onchange="setTop(2,<{$v.id}>,this.value)">
+					<option value="1" <eq name="v['recommend']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="v['recommend']" value="0">selected</eq>>否</option>
+				</select>
+			</td>
+			<td>
+				电脑：<select onchange="setTop(3,<{$v.id}>,this.value)">
+						<option value="1" <eq name="v['pc']" value="1">selected</eq>>是</option>
+						<option value="0" <eq name="v['pc']" value="0">selected</eq>>否</option>
+					</select>
+				&emsp;
+				移动：<select onchange="setTop(4,<{$v.id}>,this.value)">
+						<option value="1" <eq name="v['mobile']" value="1">selected</eq>>是</option>
+						<option value="0" <eq name="v['mobile']" value="0">selected</eq>>否</option>
+					</select>
+				<!--<br />
+				微信：<{$v['weixin'] == 1 ? '是':'否'}>&emsp;|&emsp;
+				APP：<{$v['app'] == 1 ? '是':'否'}>&emsp; -->
+				<!--&emsp;<br />
+				小程序：<{$v['wshort'] == 1 ? '是':'否'}>-->
+			</td>
+			<td>
+				<if condition="$v['status'] eq 1">
+					<font color="#00CC99">已发布</font>
+				<else />
+					<font color="red">未发布</font>
+				</if>
+			</td>
+			<td><{$v.editor}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$v['status'] eq 1">
+					<a class="button border-main publish" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-check"></span> 已发布
+					</a>
+					<else />
+						<a class="button border-red publish" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-meh-o"></span> 未发布
+						</a>
+					</if>
+					<a class="button border-red reply" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-mail-reply"></span> 撤回</a>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="12" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main icon-check" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 发布</a>
+					</if>
+					<if condition="$third['auth_recover'] eq 1">
+					<a class="button border-red icon-mail-reply" href="javascript:void(0)" 
+					onclick="artSelect(3)"> 撤回</a>
+					</if>
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-red icon-times" href="javascript:void(0)" 
+					onclick="artSelect(0)"> 取消</a>
+					</if>
+				</div>
+			</td>
+        </tr>
+		<tr>
+			<td colspan="13">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//撤回
+	$(".reply").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/artpublish/status/3/id/"+id;
+	});
+	//发布
+	$(".publish").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/artpublish/status/1/id/"+id;
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+//批量发布或撤回编辑或取消发布0：未发布，1：发布，2：草稿 3：撤回
+function artSelect(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		$("#listform").attr('action','__CONTROLLER__/artpublish/status/'+status);
+		$("#listform").submit();		
+	}
+	else{
+		errors("请选择的内容!");
+		return false;
+	}
+}
+/**
+ * 多种状态操作
+ * @param {Object} flag 1.置顶，2.推荐 ,3.pc显示,4.移动显示,5.排序 
+ * @param {Object} id  主键id
+ * @param {Object} status 显示状态
+ */
+function setTop(flag,id,status){
+	//console.log(status);return;
+	var data = {id:id};
+	if(flag == 1)		data.settop 	= status;
+	else if(flag == 2)	data.recommend 	= status;
+	else if(flag == 3)	data.pc			= status;
+	else if(flag == 4)	data.mobile 	= status;
+	else if(flag == 5)	data.order 		= status;
+	$.ajax({
+		type:"post",
+		url:"<{:U('settop')}>",
+		data:data,
+		success:function(res){
+			console.log(res);
+		}
+	});
+}
+</script>
+</body>
+</html>

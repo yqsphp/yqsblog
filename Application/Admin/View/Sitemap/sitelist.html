@@ -1,0 +1,117 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 网站地图列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<if condition="$third['auth_add'] eq 1">
+			<li><a class="button border-main icon-plus-square-o" href="<{:U('sitemap/siteedit',['status'=>1])}>"> 添加内容</a></li>
+			</if>
+			<if condition="$third['auth_check'] eq 1">
+			<li><a class="button border-main icon-eye" href="<{:U('sitemap/index')}>"> 网站地图</a></li>
+			</if>
+		</ul>
+	</div>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+			<tr>
+				<th width="1%"></th>
+				<th width="3%">序号</th>
+				<th width="5%">名称</th>
+				<th width="5%">跳转地址</th>
+				<th width="7%">创建时间</th>
+				<th width="10%">操作</th>
+			</tr>
+			<volist name="info" id="v">
+			<tr>
+				<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+				<td><{$i}></td>
+				<td><{$v.name}></td>
+				<td><a href="<{$v.url}>" target="_blank"><{$v.url}></a></td>
+				<td><{$v.ctime}></td>
+				<td>
+					<div class="button-group">
+						<if condition="$third['auth_edit'] eq 1">
+						<a class="button border-main icon-edit" href="<{:U('sitemap/siteedit',['id'=>$v['id'],'status'=>2])}>"> 编辑</a>
+						</if>
+						<if condition="$third['auth_delete'] eq 1">
+						<a class="button border-red icon-trash-o delete" href="javascript:" id="<{$v.id}>"> 删除</a>
+						</if>
+					</div>
+				</td>
+			</tr>
+			</volist>
+			<if condition="$third['auth_delete'] eq 1">
+			<tr>
+		        <td>
+		        	<input type="checkbox" class="checkall"/>
+	            </td>
+		        <td colspan="6" style="text-align:left;padding-left:20px;">
+					<div class="button-group">
+						<!-- <a class="button border-main icon-edit" href="javascript:void(0)" 
+							onclick="artSelect(1)"> 查看</a> -->
+						<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+						onclick="message()"> 删除</a>
+					</div>
+				</td>
+	        </tr>
+	        </if>
+			<tr>
+				<td colspan="6">
+					<div class="pagelist-admin">
+						<{$page}>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+	//删除
+	$(".delete").click(function(){
+		var id = $(this).attr("id");
+		function jump(){
+			location.href="__CONTROLLER__/sitedel/id/"+id;
+		}
+		warning(jump());
+	});
+});
+//批量删除
+function message(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		$("#listform").attr('action','__CONTROLLER__/sitedel');
+		$("#listform").submit();		
+	}
+	else{
+		errors("请选择的内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

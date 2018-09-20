@@ -1,0 +1,125 @@
+<include file="Public/header" />
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+		<if condition="$third['auth_add'] eq 1">
+			<div class="padding border-bottom">
+				<button type="button" class="button border-main" onclick="catedit(1)">
+    	<span class="icon-plus-square-o"></span> 添加类别</button>
+			</div>
+		</if>
+		<table class="table table-hover text-center" id="tree_table">
+			<tr>
+				<th width="10%">序号</th>
+				<th width="10%">名称</th>
+				<th width="15%">父级ID</th>
+				<th width="15%">电脑显示</th>
+				<th width="15%">移动显示</th>
+				<th width="15%">操作</th>
+			</tr>
+			<volist name="catlist" id="v">
+				<tr data-tt-id="<{$v.id}>" data-tt-parent-id="<{$v.pid}>">
+					<td>
+						<{$i}>
+					</td>
+					<td align="left">
+						<{$v._name}>
+					</td>
+					<td>
+						<{$v.pid}>
+					</td>
+					<td>
+						<select onchange="setUp(1,this.value,<{$v.id}>)">
+							<option value="1" <eq name="v['pc']" value="1">selected</eq>>是</option>
+							<option value="0" <eq name="v['pc']" value="0">selected</eq>>否</option>
+						</select>
+						<!--<font color="#00CC99">
+							<if condition="$v['pc'] eq 1">
+								<span class="icon icon-unlock"></span>
+								<else />
+								<span class="icon icon-lock"></span>
+							</if>
+						</font>-->
+					</td>
+					<td>
+						<select onchange="setUp(2,this.value,<{$v.id}>)">
+							<option value="1" <eq name="v['mobile']" value="1">selected</eq>>是</option>
+							<option value="0" <eq name="v['mobile']" value="0">selected</eq>>否</option>
+						</select>
+						<!--<font color="#00CC99">
+							<if condition="$v['mobile'] eq 1">
+								<span class="icon icon-unlock"></span>
+								<else />
+								<span class="icon icon-lock"></span>
+							</if>
+						</font>-->
+					</td>
+					<td>
+						<div class="button-group">
+							<if condition="$third['auth_edit'] eq 1">
+								<a class="button border-main" href="javascript:void(0)" onclick="catedit(2,<{$v.id}>)">
+									<span class="icon-edit"></span> 修改</a>
+							</if>
+							<if condition="$third['auth_delete'] eq 1">
+								<a class="button border-red" href="javascript:void(0)" onclick="del(<{$v.id}>)">
+									<span class="icon-trash-o"></span> 删除</a>
+							</if>
+						</div>
+					</td>
+				</tr>
+			</volist>
+			<!--<tr>
+			<td colspan="6">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>-->
+		</table>
+	</div>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.treetable.css" />
+	<script src="__PUBLIC__/js/jquery.treetable.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#tree_table").treetable({
+				indent: 20,
+				column: 1,
+				clickableNodeNames: true,
+				expandable: true,
+			});
+		});
+
+		function del(id) {
+			function del1() {
+				location.href = "__CONTROLLER__/catdel/id/" + id;
+			}
+			warning(del1);
+		}
+
+		function catedit(status, id) {
+			location.href = "__CONTROLLER__/catedit/status/" + status + "/id/" + id;
+		}
+		/**
+		 * 终端显示操作
+		 * @param {Object} status 终端标识 1.pc,2.mobile
+		 * @param {Object} flag 显示状态
+		 */
+		function setUp(status,flag,id) {
+			if(status == 1) 
+				var data = {pc:flag,id:id}
+			else 
+				var data = {mobile:flag,id:id}
+			$.ajax({
+				type:"post",
+				url:"<{:U('setup')}>",
+				data:data,
+				success:function(res){
+					console.log(res);
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

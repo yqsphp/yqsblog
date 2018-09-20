@@ -1,0 +1,135 @@
+<include file="Public/header" />
+<script type="text/javascript">
+	$(function() {
+		$('.radio label').each(function() {
+			var e = $(this);
+			e.click(function() {
+				e.closest('.radio').find("label").removeClass("active");
+				e.addClass("active");
+			});
+			$("#bttn").click(function() {
+				if($(".name").val() === "") {
+					$(".name").css('border', '1px solid red');
+					$(".tipsname").html("内容不能为空").css('color', 'red');
+					return false;
+				} else {
+					$("from").submit();
+				}
+			});
+		});
+	});
+</script>
+<style>
+	.a {
+		overflow-y: scroll;
+	}
+</style>
+
+<body>
+	<div class="panel admin-panel margin-top">
+		<div class="panel-head" id="add"><strong>
+  	<span class="icon-pencil-square-o"></span>添加类别</strong>
+		</div>
+		<div class="body-content">
+			<form method="post" class="form-x" action="__CONTROLLER__/catedit/status/<{$status}>">
+				<div class="form-group">
+					<div class="label">
+						<label>上级分类：</label>
+					</div>
+					<div class="field">
+						<select name="pid" class="input w50">
+							<option value="">请选择分类</option>
+							<volist name="parent" id="vo">
+								<option value="<{$vo.id}>" <if condition="$info['pid'] eq $vo['id']">selected</if>>
+									<{$vo.name}>
+								</option>
+							</volist>
+						</select>
+						<div class="tips" style="color: red;">不选择上级分类默认为一级分类</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>分类标题：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50 name" name="name" value="<{$info.name}>" />
+						<div class="tipsname"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>跳转地址：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50 name" name="link" value="<{$info.link}>" />
+						<div class="tips">一级分类下存在二级分类时，不填</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>终端显示：</label>
+					</div>
+					<div class="field">
+						<div class="col-sm-2">
+							<div class="label" style="width: 55px;">
+								<label>电脑端：</label>
+							</div>
+							<div class="bootstrap-switch bootstrap-switch-large">
+								<if condition="$status eq 1">
+									<input type="checkbox" name="pc" value="1" checked/>
+								<else />
+									<input type="checkbox" name="pc" value="<{$info.pc}>" <if condition="$info['pc'] eq 1">checked</if>/>
+								</if>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="label" style="width: 55px;">
+								<label>移动端：</label>
+							</div>
+							<div class="bootstrap-switch bootstrap-switch-large">
+								<if condition="$status eq 1">
+									<input type="checkbox" name="mobile" value="1" checked/>
+								<else />
+									<input type="checkbox" name="mobile" value="<{$info.mobile}>" <if condition="$info['mobile'] eq 1">checked</if>/>
+								</if>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>排序：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50" name="order" value="0" data-validate="number:排序必须为数字" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<a href="javascript:history.back()" class="button bg-yellow icon-backward"> 返回</a>
+						<button class="button bg-main icon-check-square-o" id="bttn"> 提交</button>
+					</div>
+				</div>
+				<input type="hidden" name="id" value="<{$id}>" />
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		$("input[type='checkbox']").bootstrapSwitch({
+			onSwitchChange: function(e, state) {
+				console.log(this)
+				console.log(state);
+				state == true ? $(this).val(1) : $(this).val(0);
+			}
+		});
+	})
+</script>
+
+</html>

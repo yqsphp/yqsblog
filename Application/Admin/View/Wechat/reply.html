@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<include file="Public/alert" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/zTreeStyle/zTreeStyle.css">
+<!-- 自定义样式 -->
+<link rel="stylesheet" href="__PUBLIC__/admin/css/wx-custom.css">
+</head>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="glyphicon glyphicon-align-justify"> 回复</strong>
+	</div>
+	<div class="custom-menu-edit-con">
+		<div class="panel">
+			<div class="custom-reply">
+				<div class="active">默认回复</div>
+				<div>未知回复</div>
+			</div>
+		</div>
+		<form id="custom-submit" class="form-horizontal wrapper-md" name="custom_form">
+			<div class="cm-edit-content-con" id="editMsg">
+				<div class="editTab">
+					<div class="editTab-heading">
+						<ul class="msg-panel__tab">
+							<li class="msg-tab_item active">
+								<span class="glyphicon glyphicon-list-alt"></span> 图文
+							</li>
+							<li class="msg-tab_item on">
+								<span class="glyphicon glyphicon-edit"></span> 文本
+							</li>
+							<!--<li class="msg-tab_item on">
+								<span class="glyphicon glyphicon-picture"></span> 图片
+							</li>-->
+						</ul>
+					</div>
+					<input type="hidden" name="type" id="type" value="0"/>
+					<input type="hidden" name="replytype" id="replytype" value="1"/>
+					<input type="hidden" name="id" id="id" value=""/>
+					<input type="hidden" name="aid" id="aid" value=""/>
+					<input type="hidden" name="tablename" id="tablename" value=""/>
+					<input type="hidden" name="token" id="token" value="<{$token}>"/>
+					<div class="editTab-body">
+						<div style="display: block;">
+							<ul id="treeDemo" class="ztree select"></ul>
+						</div>
+						<div>
+							<textarea class="textcon" id="conts" name="text" placeholder="请输入文本内容"></textarea>
+							<div id="emotion"></div>
+						</div>
+						<!--<div>3</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="custom-publish">
+				<a href="javascript:history.back()" class="btn btn-warning"><i class="glyphicon glyphicon-backward"></i> 返回</a>
+				<button class="btn btn-success" id="submit"><i class="glyphicon glyphicon-saved"></i> 保存</button>
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/zTreeStyle/jquery.ztree.core.js"></script>
+<script src="__PUBLIC__/zTreeStyle/jquery.ztree.excheck.js"></script>
+<include file="Public/emoji" />
+<script type="text/javascript">
+$(function(){
+	//点击右侧内容为文本是选择图文，文本，图片
+	$(".msg-panel__tab li").click(function(){
+		var index = $(this).index(), reply = $("#replytype");
+		reply.val(index+1);
+		$(this).removeClass("on").addClass("active").siblings().addClass("on").removeClass("active");
+		$(".editTab-body>div").eq(index).show().siblings().hide();
+	});
+	//选择回复类型
+	$(".custom-reply div").click(function(){
+		var that = $(this);
+		that.addClass("active").siblings().removeClass("active");
+		$("#type").val(that.index());
+	});
+	//提交
+	$("#submit").click(function(){
+		//判断是否是选择了图文
+		if($(".msg-panel__tab li").eq(0).hasClass("active")&& $("#replytype").val() == 1){
+			//获取选中的值
+			var tree  = $.fn.zTree.getZTreeObj("treeDemo");
+			var nodes = tree.getCheckedNodes(true);
+			var nleng = nodes.length;
+			//默认情况是获取第一个节点的id
+			var catid = nodes[0].id;
+			var table = nodes[0].table;
+			if(nodes==0){errors("至少选择一项");return;}
+			//节点长度大于等于2时，获取最后一个节点id
+			if(nleng >= 2){
+				catid = nodes[nleng-1].id;
+				table = nodes[nleng-1].table;
+			}
+			$("#aid").val(catid);
+			$("#tablename").val(table);
+		}
+		$.ajax({
+			type:"post",
+			url:"<{:U('wechatReply/replyedit')}>",
+			data:$("#custom-submit").serialize(),
+			beforeSend:loading(),
+			success:function(data){
+				console.log(data);
+				if(data.type == 1){
+					success(data.message);
+				}else{
+					
+				}
+			}
+		});
+	});
+	
+	getInfo(0);
+
+});
+//默认显示 默认回复
+function getInfo(type){
+	$.ajax({
+		type:"post",
+		url:"<{:U('wechatReply/reply')}>",
+		data:{"type":type,"token":"<{$token}>"},
+		success:function(data){
+			console.log(data);
+			console.log(1);
+						
+			if(data){
+				$("#id").val(data.id);
+				var tab = $(".msg-panel__tab li");
+				tab.addClass("on").removeClass("active")
+				if(data.replytype == 1){
+					//图文
+					$("#aid").val(data.aid);
+					$("#tablemane").val(data.tablename);
+					trees(data);
+				}else if(data.replytype == 2){
+					//文本
+					$("#conts").val(data.text);
+				}else if(data.replytype == 3){
+					//图片
+				}else if(data.replytype == 4){
+					//音频
+				}else{
+					//视频
+				}
+				tab.eq(data.replytype-1).addClass("active").removeClass("on");
+			}else{
+				trees();
+			}
+		}
+	});
+}
+//显示树操作
+function trees(info){
+	//节点树操作
+	var setting = {
+			check: {
+				enable: true,
+				chkStyle: "radio"
+			},
+			data: {
+				key: {
+					title: "name"
+				},
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				onCheck: onCheck
+			}
+		};
+	$.ajax({
+		type:"post",
+		url:"<{:U('article')}>",
+		success:function(data){
+			console.log(data);
+			var znode = "[" ,art=data[0], cat = data[1], artlen = art.length, catlen = cat.length;
+			if(info){
+				for(var i = 0;i < catlen; i++){
+					if(info.aid == cat[i].id && (info.tablename == cat[i].table || info.tablename == 'article')){
+						znode += "{id:"+cat[i].id+",pId:"+cat[i].pid+",name:'"+cat[i].name+"',table:'"+cat[i].table+"',checked:true,open:true,children:[";
+					}else{
+						znode += "{id:"+cat[i].id+",pId:"+cat[i].pid+",name:'"+cat[i].name+"',table:'"+cat[i].table+"',children:[";
+					}
+					
+					//znode+="{id:"+cat[i].id+",pId:"+cat[i].pid+",name:'"+cat[i].name+"',table:'"+cat[i].table+"',children:[";
+					for(var j = 0;j < artlen;j++){
+						if(art[j].catid == cat[i].id){
+							if(info.aid == art[j].id && info.tablename == art[j].table){
+								znode += "{id:"+art[j].id+",pId:"+art[j].catid+",name:'"+art[j].name+"',checked:true,open:true,table:'"+art[j].table+"'},";
+							}else{
+								znode += "{id:"+art[j].id+",pId:"+art[j].catid+",name:'"+art[j].name+"',table:'"+art[j].table+"'},";
+							}
+						}
+					}
+					znode += "]},";
+				}
+			}else{
+				for(var i = 0;i < catlen; i++){
+					znode += "{id:"+cat[i].id+",pId:"+cat[i].pid+",name:'"+cat[i].name+"',table:'"+cat[i].table+"',children:[";
+					for(var j = 0;j < artlen; j++){
+						if(art[j].catid == cat[i].id){
+							znode += "{id:"+art[j].id+",pId:"+art[j].catid+",name:'"+art[j].name+"',table:'"+art[j].table+"'},";
+						}
+					}
+					znode+="]},";
+				}
+			}
+			znode  = znode.substring(0,znode.length-1);
+			znode += "]";
+			znode  = eval(znode);
+			
+			$.fn.zTree.init($("#treeDemo"), setting, znode);
+			setTitle();
+			count();
+		}
+	});
+}
+function onCheck(e, treeId, treeNode) {
+	count();
+}
+
+function setTitle(node) {
+	var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+	var nodes = node ? [node]:zTree.transformToArray(zTree.getNodes());
+	for(var i = 0, l = nodes.length; i<l; i++) {
+		var n   = nodes[i];
+		n.title = "[" + n.id + "] isFirstNode = " + n.isFirstNode + ", isLastNode = " + n.isLastNode;
+		zTree.updateNode(n);
+	}
+}
+function count() {
+	function isForceHidden(node) {
+		if (!node.parentTId) return false;
+		var p = node.getParentNode();
+		return !!p.isHidden ? true : isForceHidden(p);
+	}
+	var zTree 	 = $.fn.zTree.getZTreeObj("treeDemo"),
+	checkCount 	 = zTree.getCheckedNodes(true).length,
+	nocheckCount = zTree.getCheckedNodes(false).length,
+	hiddenNodes  = zTree.getNodesByParam("isHidden", true),
+	hiddenCount  = hiddenNodes.length;
+
+	for (var i=0, j=hiddenNodes.length; i<j; i++) {
+		var n = hiddenNodes[i];
+		if (isForceHidden(n)) {
+			hiddenCount -= 1;
+		} else if (n.isParent) {
+			hiddenCount += zTree.transformToArray(n.children).length;
+		}
+	}
+}
+/*树形结构 end*/
+
+</script>
+</html>

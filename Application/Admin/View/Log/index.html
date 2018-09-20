@@ -1,0 +1,185 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 操作日志列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<li>搜索：
+					<input type="hidden" name="p" value="<{$get['p'] != 1 ? 1 : $get['p']}>" />
+				</li>
+				<li>
+					<select name="uid" class="input" style="line-height:18px;">
+						<option value="">请选择管理员</option>
+						<volist name="user" id="v">
+						<option value="<{$v.id}>" <if condition="$get['uid'] eq $v['id']">selected</if>><{$v.name}></option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<script src="__PUBLIC__/js/laydate/laydate.js"></script>
+					<span class="float-left">起止时间：</span>	
+					<input type="text" class="input float-left" style="width: 110px; line-height:18px;" id="demo1" name="start" value="<{$get.start}>" placeholder="请输入日期" onclick="laydate"/>
+					<span class="float-left">&nbsp;-&nbsp;</span>	
+					<input type="text" class="input float-left" style="width: 110px; line-height:18px;" id="demo2" name="end" value="<{$get.end}>" placeholder="请输入日期" onclick="laydate"/>
+					<script>
+					;!function(){laydate.skin('blue');laydate({elem: '#demo1',istoday:true})}();
+					;!function(){laydate.skin('blue');laydate({elem: '#demo2',istoday:true})}();
+					</script>
+				</li>
+				<li>
+					<span class="float-left">操作类型：</span>
+					<select name="type" class="input float-left" style="line-height:18px; width: 60px;">
+						<option value="">类型</option>
+						<option value="1" <if condition="$get['type'] eq 1">selected</if>>添加</option>
+						<option value="2" <if condition="$get['type'] eq 2">selected</if>>编辑</option>
+						<option value="3" <if condition="$get['type'] eq 3">selected</if>>删除</option>
+						<option value="4" <if condition="$get['type'] eq 4">selected</if>>还原</option>
+					</select>
+				</li>
+				<li>
+					<span class="float-left">操作表：</span>
+					<select name="tables" class="input float-left" style="line-height:18px; width: 130px;">
+						<option value="">全部表</option>
+						<volist name="tables" id="v">
+						<option value="<{$v.name|substr=###,8}>" <if condition="$get['tables'] eq substr($v['name'],8)">selected</if>><{$v.comment}></option>
+						</volist>
+					</select>
+				</li>
+				<li>
+					<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+				</li>
+				<li><input type="reset" id="resets"  class="button border-main icon-search"  value="重置"/></li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th></th>
+			<th>序号</th>
+			<th>操作管理员</th>
+			<th>管理员IP</th>
+			<th>操作表名</th>
+			<th>日志记录</th>
+			<th>操作类型</th>
+			<th>操作时间</th>
+			<th width="30%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td><{$v.uname}></td>
+			<td><{$v.ip}></td>
+			<td><{$v.tcomment}></td>	
+			<td><{$v.log}></td>	
+			<td>
+				<{$v['type'] == 1 ? '添加' : ($v['type'] == 2 ? '编辑' : ($v['type'] == 3 ? '删除' : '还原'))}>
+			</td>	
+			<td>
+				<{$v.ctime}>
+			</td>	
+			<td>
+				<div class="button-group">
+					<if condition="$third['auth_check'] eq 1">
+					<a class="button border-main edit" href="javascript:void(0)" id="<{$v.id}>" type="<{$v.type}>" table="<{$v.tcomment}>(<{$v.tables}>)">
+						<span class="icon-edit"></span> 查看</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<if condition="$third['auth_delete'] eq 1">
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="11" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="artSelect()"> 删除</a>
+				</div>
+			</td>
+		</tr>
+		</if>
+		<tr>
+			<td colspan="9">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+//批量删除或提交 0：删除
+function artSelect(){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		var url="";
+		function sumit(){
+			url='artdel/status/'+status;
+			$("#listform").attr('action','<{:U('log/logdel')}>');
+			$("#listform").submit();
+		}
+		warning(sumit);
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/logdel/id/"+id;
+		}
+		warning(jumps);
+	});
+	//编辑
+	$(".edit").click(function(){
+		id    = $(this).attr('id');
+		table = $(this).attr("table");
+		type  = $(this).attr("type");
+		location.href="__CONTROLLER__/logshow/id/"+id+"/table/"+table+"/type/"+type;
+	});
+		//重置
+	$("#resets").click(function(){
+		$(".input").removeAttr("value");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+</script>
+</body>
+</html>

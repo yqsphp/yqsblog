@@ -1,0 +1,166 @@
+<include file="Public/header"/>
+<!--从微信服务器获取的图片需添加如下头-->
+<meta name="referrer" content="no-referrer" />
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 附件列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<!--搜索-->
+	<form action="" method="get" id="serachs">
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<li><a class="button border-main icon-backward" href="javascript:" onclick="history.back()"> 返回</a></li>
+			<li><a class="button border-main icon-plus-square-o" href="<{:U('wechatResource/source_edit',['status'=>1,'wechat_id'=>$wechat_id])}>"> 添加素材</a></li>
+			<li>搜索：</li>
+			<li>
+				<select name="ext" class="input">
+					<option value="">微信号</option>
+					<volist name="user" id="v">
+					<option value="1" <eq name="get['wechat_id']" value="$v['id']">selected</eq>><{$v.name}></option>
+					</volist>
+				</select>
+			</li>
+			<li>
+				<button href="javascript:void(0)" type="submit" class="button border-main icon-search"> 搜索</button>
+				<button href="javascript:void(0)" type="reset" id="resets" class="button border-main icon-search"> 重置</button>
+			</li>
+			<li><font color="red">注意:已上传微信公众号的素材不能再次编辑，不能再次上传</font></li>
+		</ul>
+	</div>
+	</form>
+	<form method="post" action="" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="3%">序号</th>
+			<th width="3%">素材ID</th>
+			<th width="5%">标题</th>
+			<th width="8%">作者</th>
+			<th width="8%">简介</th>
+			<th width="5%">缩略图</th>
+			<th width="8%">原文地址</th>
+			<th width="8%">上传微信</th>
+			<th width="10%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td width="1%">
+				<if condition="empty($v['media_id'])">
+				<input type="checkbox" name="id[]" value="<{$v.id}>"/>
+				</if>
+			</td>
+			<td><{$i}></td>
+			<td><{$v.source_id}></td>
+			<td><{$v.title}></td>
+			<td><{$v.author}></td>
+			<td><{$v.digest}></td>
+			<td>
+				<if condition="$v['thumb_url']">
+				<img class="img-thumbnail" src="<{$v.thumb_url}>"/>
+				<else />
+				<img class="img-thumbnail" src="__PUBLIC__/<{$v.local_image}>"/>
+				</if>
+			</td>
+			<td><{$v.content_source_url}></td>
+			<td><{$v['up'] == 1? '是':'否'}></td>
+			<td>
+				<div class="button-group">
+					<if condition="$v['up'] eq 0">
+						<if condition="$third['auth_edit'] eq 1">
+						<a class="button border-main icon-edit" href="<{:U('source_edit',['id'=>$v['id'],'wechat_id'=>$wechat_id,'status'=>2])}>"> 编辑</a>
+						</if>
+					<else />
+						<if condition="$third['auth_check'] eq 1">
+						<a class="button border-main icon-eye" href="<{:U('source_check',['wechat_id'=>$wechat_id,'id'=>$v['id']])}>"> 查看</a>
+						</if>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+						<if condition="$v['up'] eq 0">
+						<a class="button border-red icon-trash-o delete" href="javascript:" id="<{$v.id}>"> 删除</a>
+						</if>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="15" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<a class="button border-main icon-edit" href="javascript:void(0)" 
+						onclick="message(1)"> 上传</a>
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="message(0)"> 删除</a>
+				</div>
+				<span class="margin-large-left" style="color: red;">注意：根据微信规定，每次最多允许上传8个，否则上传失败</span>
+			</td>
+       </tr>
+		<tr>
+			<td colspan="15">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+	//删除
+	$(".delete").click(function(){
+		var id = $(this).attr("id");
+		function jump(){
+			location.href="<{:U('source_del')}>/id/"+id;
+		}
+		warning(jump);
+	});
+});
+function message(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		if(status==0){
+			function sumit(){
+				$("#listform").attr("action","<{:U('source_del')}>");
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}else{
+			$("#listform").attr('action',"<{:U('source_upload_news',['wechat_id'=>$wechat_id])}>");
+			loading();
+			$("#listform").submit();
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

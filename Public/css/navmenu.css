@@ -1,0 +1,13 @@
+br {line-height:8px; margin:0px;}
+a {color:#1c769a; text-decoration:none; font-size:1.1em;}
+a:hover {text-decoration:underline;}
+.menu{width:311px;padding:10px;border:solid 1px #dfdfdf;background:#ffffff;font-size:11px;margin:0 auto;overflow:hidden;}
+.menu{margin: 0; padding: 6px; line-height: 1.2em;}
+.menu ul li{display:block;width:311px;padding: 6px;padding-top:2px;line-height: 1.2em;margin-bottom:5px;background: url(../image/navmenu/zakladka.png) top left no-repeat;list-style:none;overflow:visible;}
+.menu ul li a{display:block;height:34px; width:273px;margin-top:0px;padding-top:10px;padding-left:35px;font-size:14px;color:#82846f;outline:none;}
+.menu ul li .active{background:url(../image/navmenu/on.png) top right no-repeat;}
+.menu ul li .inactive{background:url(../image/navmenu/off.png) top right no-repeat;}
+.menu ul li ul{display:none; margin-top:-4px;margin-bottom:20px;   }
+.menu ul li ul li ul{margin-bottom:5px;}
+.menu ul li ul li{display:block;background:none;font-size:12px;list-style:circle;color:#8f9d4c;margin-bottom:0px;margin-top:0px;padding-top:0px;padding-bottom:0px;padding-left:1px;margin-left:35px;}
+.menu ul li ul li a{background:none;font-size:12px;height:15px;color:#8f9d4c;padding-left:0px; }

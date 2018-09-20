@@ -1,0 +1,221 @@
+<include file="Public/header"/>
+<link href="__PUBLIC__/Css/bootstrap.min.css" rel="stylesheet" />
+<script src="__PUBLIC__/Js/bootstrap.min.js"></script>
+<style>
+body{font-size:14px;color:#333;background:#fff;font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;}
+	a:hover{text-decoration: none;}
+	.admin-panel{border:1px solid #ccc}
+</style>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 评论列表</strong>
+	</div>
+	<form action="" method="post" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<li>搜索：</li>
+				<li>
+				<select name="catid" class="input" style="line-height:17px;">
+					<option value="">请选择分类</option>
+					<volist name="cat" id="vo">
+					<option value="<{$vo.id}>"><{$vo.name}></option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<input type="text" placeholder="请输入搜索关键字" name="title" class="input" style="width:250px; line-height:17px;display:inline-block"/>
+				<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a></li>
+			</ul>
+		</div>
+	</form>
+	<form id="listform" action="" method="post">
+	<table class="table table-hover text-center">
+	<tr>
+		<th></th>
+		<th>序号</th>
+		<th>用户</th>
+		<th>时间</th>
+		<th>内容</th>
+		<th>ip</th>
+		<th>状态</th>
+		<th>操作</th>
+	</tr>
+	<volist name="info" id="v">
+	<tr>
+		<td width="1%" style="vertical-align: middle;"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+		<td style="vertical-align: middle;"><{$i}></td>
+		<td style="vertical-align: middle;"><{$v.author_name}></td>
+		<td style="vertical-align: middle;"><{$v.date|date='Y-m-d H:i:s',###}></td>
+		<td style="vertical-align: middle;">
+			<div style="width:200px; height:20px; overflow: hidden;"><{$v.message}></div>
+		</td>
+		<td style="vertical-align: middle;"><{$v.ip}></td>
+		<td style="vertical-align: middle;">
+			<font color="#00CC99">
+				<if condition="$v['status'] eq 'approved'">
+					已通过
+				<elseif condition="$v['status'] eq 'pending'" />
+					待审核
+				<else />
+					已删除
+				</if>
+			</font>
+		</td>
+		<td style="vertical-align: middle;">
+			<div class="button-group">
+				<a class="button border-main" href="javascript:void(0)" onclick="oneSubmit(<{$v.id}>)">
+					<span class="icon-mail-forward"></span> 同步</a>
+				<a class="button border-main shenhe" href="javascript:void(0)" id="<{$v.id}>">
+					<div class="mid" style="display: none"><{$v.message}></div>
+					<span class="icon-edit"></span> 审核</a>
+				<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+					<span class="icon-trash-o"></span> 删除</a>
+			</div>
+		</td>
+	</tr>
+	</volist>
+	<tr>
+        <td>
+        	<input type="checkbox" class="checkall"/>
+        </td>
+        <td colspan="8" style="text-align:left;padding-left:20px;">
+			<div class="button-group">
+				<a class="button border-main icon-mail-forward" href="javascript:void(0)" 
+					onclick="artSelect(1)"> 同步</a>
+				<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+				onclick="artSelect(0)"> 删除</a>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="9">
+			<div class="pagelist-admin">
+				<{$page}>
+			</div>
+		</td>
+	</tr>
+	</table>
+	</form>
+</div>
+<!--弹出层审核-->
+<div class="modal fade" id="shenhe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					审核
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="formeidt" action="<{:U('Comments/shenhe')}>" method="post">
+					<input type="hidden" name="id" class="id">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr>
+							<td width="14%">状态：</td>
+							<td>
+								<input type="radio" name="status" value="approved" checked="checked">通过&nbsp;
+								<input type="radio" name="status" value="delete">删除&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td>内容：</td>
+							<td>
+								<textarea class="input messages" rows="5" cols="5"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<button class="button border-main submitdata icon-mail-forward" type="submit">
+      			 提交</button> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层审核over-->
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/comdel/id/"+id;
+		}
+		warning(jumps);
+	});
+	//编辑
+	$(".edit").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/artedit/status/2/id/"+id;
+	});
+	//审核
+	$(".shenhe").click(function(){
+		$(".id").val($(this).attr('id'));
+		$(".messages").empty();
+		$(".messages").val($(this).children('.mid').html());
+		$("#shenhe").modal('show');
+	});
+});
+//单个文章提交
+function oneSubmit(id){
+	location.href="__CONTROLLER__/artpublish/edit/1/status/1/id/"+id;
+}
+
+function shenhe(id){
+	$(".id").val(id);
+	var message=
+	$(".messages").empty();
+	$(".messages").val(message);
+	$("#shenhe").modal('show');
+}
+//批量同步与删除
+function artSelect(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		var url="";
+		if(status==0){
+			function sumit(){
+				$("#listform").attr('action','__CONTROLLER__/comdel');
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}else{
+			$("#listform").attr('action','__CONTROLLER__/tongbu');
+			$("#listform").submit();
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<include file="Public/header"/>
+<body>
+
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 微信账号列表</strong>
+	</div>
+	<div class="padding border-bottom">
+		<ul class="search" style="padding-left:10px;">
+			<li><a class="button border-main icon-plus-square-o" href="<{:U('wechatAccount/accountedit',['status'=>1])}>"> 添加账号</a></li>
+		</ul>
+	</div>
+	<table class="table table-hover text-center">
+		<tr>
+			<th width="5%">序号</th>
+			<th>公众号</th>
+			<th>原始id</th>
+			<th>appid</th>
+			<th width="20%">密钥</th>
+			<th>类型</th>
+			<th width="30%">操作</th>
+		</tr>
+		<volist name="info" id="v">
+		<tr>
+			<td><{$i}></td>
+			<td width="10%"><{$v.name}></td>
+			<td width="10%"><{$v.initid}></td>
+			<td><{$v.appid}></td>
+			<td><{$v.token}></td>
+			<td>
+		      	<if condition="$v['type'] eq 1">
+		      	订阅号
+		      	<elseif condition="$v['type'] eq 2" />
+		      	服务号
+		      	<else />
+		      	企业号
+		      	</if>
+			</td>
+			<td>
+				<div class="button-group">
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main edit" href="<{:U('wechatAccount/accountedit',['id'=>$v['id'],'status'=>2])}>">
+						<span class="icon-edit"></span> 修改</a>
+					</if>	
+					<if condition="$third['auth_check'] eq 1">
+					<a class="button border-main defaults" href="<{:U('wechat/index',['id'=>$v['id'],'title'=>$v['name'],'token'=>$v['token']])}>">
+						<span class="icon-edit"></span> 菜单</a>
+					</if>
+					<if condition="$third['auth_check'] eq 1">
+					<a class="button border-main defaults" href="<{:U('wechatResource/source_child_list',['wechat_id'=>$v['id']])}>">
+						<span class="icon-edit"></span> 素材</a>
+					</if>
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main defaults" href="<{:U('wechat/reply',['id'=>$v['id'],'token'=>$v['token']])}>">
+						<span class="icon-edit"></span> 回复</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+			<td colspan="7">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+$(function(){
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function del6(){
+			location.href="__CONTROLLER__/accountdel/id/"+id;
+		}
+		warning(del6);
+	});
+});
+</script>
+</body>
+</html>

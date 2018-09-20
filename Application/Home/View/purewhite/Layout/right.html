@@ -1,0 +1,44 @@
+<div class="am-u-md-4 am-u-sm-12 blog-sidebar">
+	<div class="blog-sidebar-widget blog-bor am-text-center">
+		<h2 class="blog-title"><span>About ME</span></h2>
+		<img src="__PUBLIC__/image/user.jpg" alt="about me" class="blog-entry-img">
+		<p><{:C( 'webtitle')}></p>
+		<p>先感谢各位浏览我的博客，不足地方请多多谅解或者将您发现的问题通过右侧的邮箱联系我，感谢各位对我的支持
+		我是一个开发人员，相对的这个网站就是一个技术型的博客网站，将我个人的心得、随笔、相关技术文章、转载一些其他的技术文章发布在这个网站上
+		<span class="am-text-warning">如果有需要做网站包括小程序的可以通过邮箱或微信联系我</span>
+		</p>
+	</div>
+	<div class="blog-sidebar-widget blog-bor">
+		<h2 class="am-text-center blog-title"><span>Contact ME</span></h2>
+		<p>我的邮箱：yqsphp@qq.com</p>
+		<p>我的微信：yaoqishan173</p>
+	</div>
+	<div class="blog-clear-margin blog-sidebar-widget blog-bor am-g">
+		<h2 class="am-text-center blog-title"><span>TAG cloud</span></h2>
+		<div class="am-u-sm-12 blog-clear-padding">
+			<volist name="cate" id="v">
+			<a href="<{:U('list/'.$v['id'])}>" class="blog-tag"><{$v.name}></a>
+			</volist>
+		</div>
+	</div>
+	<div class="blog-sidebar-widget blog-bor">
+		<h2 class="am-text-center blog-title"><span>置顶推荐</span></h2>
+		<ul class="am-list">
+			<volist name="settop" id="v">
+			<li>
+				<div class="am-padding-top-xs am-padding-bottom-xs blog-line-clamp-1"><a href="<{:getArticleUrl($v['catid'],$v['id'],2)}>"><{$v.name}></a></div>
+			</li>
+			</volist>
+		</ul>
+	</div>
+	<div class="blog-sidebar-widget blog-bor">
+		<h2 class="am-text-center blog-title"><span>阅读排行</span></h2>
+		<ul class="am-list">
+			<volist name="order" id="v">
+			<li>
+				<div class="am-padding-top-xs am-padding-bottom-xs blog-line-clamp-1"><a href="<{:getArticleUrl($v['catid'],$v['id'],2)}>"><{$v.name}></a></div>
+			</li>
+			</volist>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>后台管理中心</title>  
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/css/admin.css">
+    <script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>  
+    <include file="Public/alert" />
+	<script type="text/javascript">
+	$(function(){
+		$("#clear").click(function(){
+			$.ajax({
+				type:"post",
+				url:"<{:U('Index/clearCache')}>",
+				sendBefore:loading(),
+				success:function(data){
+					console.log(data);
+					if(data){
+						success('缓存清除成功');
+					}else{
+						errors('缓存清除失败');
+					}
+				}
+			});
+		});
+		$("#logout").click(function(){
+			function logouts(){
+				location.href="<{:U('Login/logout')}>";
+			}
+			warning(logouts);
+		});
+		/*$("#site").click(function(){
+			location.href="<{:U('sitemap/index')}>";
+		});*/
+	});
+	</script>
+	</head>
+<body style="background-color:#f2f9fd;">
+<div class="header-1 bg-main">
+  <div class="logo margin-big-left fadein-top">
+    <h1>
+    	<img src="__PUBLIC__/admin/images/y.jpg" class="radius-circle rotate-hover" height="50" />
+    	后台管理中心
+    </h1>
+  </div>
+  <div class="head-l">
+	  	<a class="button button-little bg-green" href="<{:C('website')}>" target="_blank">
+	  		<span class="icon-home"></span> 前台首页
+	  	</a> &nbsp;&nbsp;
+	  	<if condition="$Think.session.user_info.user_id eq 1">
+  		<a id="clear" class="button button-little bg-blue" href="javascript:void(0)">
+  			<span class="icon-wrench"></span> 清除缓存
+  		</a> &nbsp;&nbsp;
+  		</if>
+		<a id="logout" class="button button-little bg-red" href="javascript:void(0)">
+			<span class="icon-power-off"></span> 退出登录
+		</a> &nbsp;&nbsp;
+		<a id="site" class="button button-little bg-green" href="<{:U('sitemap/index')}>" target="_blank">
+			<span class="icon-map-marker"></span> 网站地图
+		</a> 
+  </div>
+	<span class="login-person">欢迎：<{$Think.session.user_info.user_name}></span>
+</div>

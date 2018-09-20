@@ -1,0 +1,153 @@
+[ 2018-09-19T15:51:34+08:00 ] 127.0.0.1 /list/4.html
+ERR: 非法操作:list
+
+[ 2018-09-19T15:51:39+08:00 ] 127.0.0.1 /list/22.html
+ERR: 非法操作:list
+
+[ 2018-09-19T16:05:00+08:00 ] 127.0.0.1 /list/serach.html?keywords=
+ERR: 非法操作:list
+
+[ 2018-09-19T16:05:17+08:00 ] 127.0.0.1 /serach.html?keywords=
+ERR: 非法操作:serach
+
+[ 2018-09-19T16:05:42+08:00 ] 127.0.0.1 /serach.html
+ERR: 非法操作:serach
+
+[ 2018-09-19T16:06:07+08:00 ] 127.0.0.1 /serach.html?keywords=
+ERR: 非法操作:serach
+
+[ 2018-09-19T16:28:45+08:00 ] 127.0.0.1 /assets/css/amazeui.min.css
+ERR: 非法操作:assets
+
+[ 2018-09-19T16:28:45+08:00 ] 127.0.0.1 /assets/js/amazeui.min.js
+ERR: 非法操作:assets
+
+[ 2018-09-19T16:28:46+08:00 ] 127.0.0.1 /assets/css/app.css
+ERR: 非法操作:assets
+
+[ 2018-09-19T16:28:46+08:00 ] 127.0.0.1 /assets/js/jquery.min.js
+ERR: 非法操作:assets
+
+[ 2018-09-19T16:28:46+08:00 ] 127.0.0.1 /assets/js/amazeui.min.js
+ERR: 非法操作:assets
+
+[ 2018-09-19T17:11:24+08:00 ] 127.0.0.1 /article/i/3.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `myblog_article` SET `hits`=hits+1 WHERE ( id =  )
+
+[ 2018-09-19T17:15:49+08:00 ] 127.0.0.1 /img/i/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: title E:\www\myblog\Application\Home\Common\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `myblog_article` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `myblog_category` [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:18:24+08:00 ] 127.0.0.1 /img/i/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: title E:\www\myblog\Application\Home\Common\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `myblog_article` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `myblog_category` [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-09-19T17:18:46+08:00 ] 127.0.0.1 /img/i/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: title E:\www\myblog\Application\Home\Common\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `myblog_article` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_category` [ RunTime:0.0050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-09-19T17:20:51+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: title E:\www\myblog\Application\Home\Common\BaseController.class.php 第 12 行.
+NOTIC: [8] Undefined index: i E:\www\myblog\Application\Home\Common\BaseController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `myblog_article` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `myblog_category` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `myblog_article` WHERE `isdel` = 0 AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `myblog_article` WHERE `isdel` = 0 AND `status` = 1 ORDER BY ptime desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `myblog_article` WHERE `isdel` = 0 AND `status` = 1 ORDER BY hits desc LIMIT 10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+NOTIC: [8] Undefined variable: rand E:\www\myblog\Application\Common\Common\function.php 第 344 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

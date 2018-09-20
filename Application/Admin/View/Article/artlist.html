@@ -1,0 +1,265 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 内容列表</strong><a href="" style="float:right; display:none;">添加字段</a>
+	</div>
+	<form action="" method="get" id="serachs">
+		<div class="padding border-bottom">
+			<ul class="search" style="padding-left:10px;">
+				<if condition="$third['auth_add'] eq 1">
+				<li><a class="button border-main icon-plus-square-o" href="<{:U('Article/artedit',array('status'=>1))}>"> 添加内容</a></li>
+				</if>
+				<li>搜索：</li>
+				<li>
+				<select name="catid" class="input" style="line-height:17px;">
+					<option value="">请选择分类</option>
+					<volist name="cat" id="vo">
+					<option value="<{$vo.id}>" <eq name="get['catid']" value="$vo['id']">selected</eq>><{$vo._name}></option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<select name="portshow" class="input" style="line-height:17px;">
+					<option value="">显示终端</option>
+					<option value="电脑端" <eq name="get['portshow']" value="电脑端">selected</eq>>电脑端</option>
+					<option value="移动端" <eq name="get['portshow']" value="移动端">selected</eq>>移动端</option>
+					<option value="微信端" <eq name="get['portshow']" value="微信端">selected</eq>>微信端</option>
+					<option value="APP端" <eq name="get['portshow']" value="APP端">selected</eq>>APP端</option>
+					<option value="小程序端" <eq name="get['portshow']" value="小程序端">selected</eq>>小程序端</option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<select name="porttype" class="input" style="line-height:17px;">
+					<option value="">显示方式</option>
+					<option value="置顶" <eq name="get['porttype']" value="置顶">selected</eq>>置顶</option>
+					<option value="推荐" <eq name="get['porttype']" value="推荐">selected</eq>>推荐</option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<select name="status" class="input" style="line-height:17px;">
+					<option value="">状态</option>
+					<option value="2" <eq name="get['status']" value="2">selected</eq>>草稿</option>
+					<option value="3" <eq name="get['status']" value="3">selected</eq>>撤回</option>
+					</volist>
+				</select>
+				</li>
+				<li>
+				<input type="text" placeholder="请输入搜索关键字" name="name" class="input" 
+					style="width:250px; line-height:17px;display:inline-block" value="<if condition="!empty($get['name'])"><{$get['name']}></if>"/>
+				<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+				</li>
+				<li><input type="reset" id="resets" class="button border-main icon-search"  value="重置"/></li>
+			</ul>
+		</div>
+	</form>
+	<form method="post" action="<{:U('artdel')}>" id="listform">
+		<table class="table table-hover text-center">
+		<tr>
+			<th width="1%"></th>
+			<th width="5%">序号</th>
+			<th width="5%">排序</th>
+			<th width="10%">图片</th>
+			<th width="15%">标题</th>
+			<th>状态</th>
+			<th width="5%">分类名称</th>
+			<th width="5%">置顶</th>
+			<th width="5%">推荐</th>
+			<th width="10%">创建时间</th>
+			<th width="5%">编辑人</th>
+			<th width="25%">操作</th>
+		</tr>
+		<volist name="list" id="v">
+		<tr>
+			<td width="1%"><input type="checkbox" name="id[]" value="<{$v.id}>"/></td>
+			<td><{$i}></td>
+			<td>
+				<input type="text" id="<{$v.id}>" name="sort" value="<{$v.order}>" onblur="setTop(5,<{$v.id}>,this.value)" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;"/>
+			</td>
+			<td width="10%">
+				<img src="<if condition="$v['image'] neq ''">__PUBLIC__/<{$v.image}><else /><{:C('DEFAULT_IMG')}></if>" alt="" width="70" height="50"/>
+			</td>
+			<td>
+				<a title="<{$v.name}>"><if condition="strlen($v['name']) lt 18"><{$v.name}><else /><{$v.name|mb_substr=###,0,18,'utf-8'}>...</if></a>
+			</td>
+			<td>
+				<font color="#00CC99">
+					<if condition="$v['status'] eq 2">
+						草稿
+					<elseif condition="$v['status'] eq 3" />
+						<font color="red">撤回</font>
+					<else />
+						未发布
+					</if>
+				</font>
+			</td>
+			<td><{$v.cname}></td>
+			<td>
+				<select onchange="setTop(1,<{$v.id}>,this.value)">
+					<option value="1" <eq name="v['settop']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="v['settop']" value="0">selected</eq>>否</option>
+				</select>
+			</td>
+			<td>
+				<select onchange="setTop(2,<{$v.id}>,this.value)">
+					<option value="1" <eq name="v['recommend']" value="1">selected</eq>>是</option>
+					<option value="0" <eq name="v['recommend']" value="0">selected</eq>>否</option>
+				</select>
+			</td>
+			<td><{$v.ctime}></td>
+			<td><{$v.editor}></td>
+			<td>
+				<div class="button-group">
+					<a class="button border-main" href="javascript:void(0)" onclick="oneSubmit(<{$v.id}>)">
+						<span class="icon-mail-forward"></span> 提交</a>
+					<if condition="$third['auth_edit'] eq 1">
+					<a class="button border-main edit" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-edit"></span> 修改</a>
+					</if>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red delete" href="javascript:void(0)" id="<{$v.id}>">
+						<span class="icon-trash-o"></span> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+	        <td>
+	        	<input type="checkbox" class="checkall"/>
+            </td>
+	        <td colspan="11" style="text-align:left;padding-left:20px;">
+				<div class="button-group">
+					<a class="button border-main icon-mail-forward" href="javascript:void(0)" 
+						onclick="artSelect(1)"> 提交</a>
+					<if condition="$third['auth_delete'] eq 1">
+					<a class="button border-red icon-trash-o" href="javascript:void(0)" 
+					onclick="artSelect(0)"> 删除</a>
+					</if>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="11">
+				<div class="pagelist-admin">
+					<{$page}>
+				</div>
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+//搜索
+function changesearch(){	
+	$('#serachs').submit();
+}
+$(function(){
+	//全选
+	$(".checkall").click(function(){ 
+	  $("input[name='id[]']").each(function(){
+		  if (this.checked) {
+			  this.checked = false;
+		  }
+		  else {
+			  this.checked = true;
+		  }
+	  });
+	});
+	//删除
+	$(".delete").click(function(){
+		id=$(this).attr('id');
+		function jumps(){
+			location.href="__CONTROLLER__/artdel/id/"+id;
+		}
+		warning(jumps);
+		/*if(confirm("确定删除吗？")){
+			id=$(this).attr('id');
+			location.href="__CONTROLLER__/artdel/id/"+id;
+		}*/
+	});
+	//编辑
+	$(".edit").click(function(){
+		id=$(this).attr('id');
+		location.href="__CONTROLLER__/artedit/status/2/id/"+id;
+	});
+	//排序设置
+	$("input[name='sort']").blur(function(){
+		var sort = $(this).val();
+		var id   = $(this).attr("id");
+		$.ajax({
+			type:"post",
+			url:"<{:U('article/artsort')}>",
+			data:{"id":id,"sort":sort},
+			success:function(res){
+				console.log(res);
+			}
+		});
+	});
+	//重置
+	$("#resets").click(function(){
+		$(".input").val("");
+		$(".input").find("option").removeAttr("selected");
+	});
+});
+//单个文章提交
+function oneSubmit(id){
+	location.href="__CONTROLLER__/artpublish/edit/1/status/0/id/"+id;
+}
+//批量删除或提交 0：删除，1：提交
+function artSelect(status){
+	var Checkbox=false;
+	 $("input[name='id[]']").each(function(){
+	  if (this.checked==true) {		
+		Checkbox=true;	
+	  }
+	});
+	if (Checkbox){
+		var url="";
+		if(status==0){
+			function sumit(){
+				url='artdel/status/'+status;
+				$("#listform").attr('action','__CONTROLLER__/'+url);
+				$("#listform").submit();
+			}
+			warning(sumit);
+		}else{
+			url='artpublish/edit/1/status/0';
+			$("#listform").attr('action','__CONTROLLER__/'+url);
+			$("#listform").submit();
+		}
+				
+	}
+	else{
+		errors("请选择内容!");
+		return false;
+	}
+}
+/**
+ * 多种状态操作
+ * @param {Object} flag 1.置顶，2.推荐 ,5.排序 
+ * @param {Object} id  主键id
+ * @param {Object} status 显示状态
+ */
+function setTop(flag,id,status){
+	//console.log(status);return;
+	var data = {id:id};
+	if(flag == 1)		data.settop 	= status;
+	else if(flag == 2)	data.recommend 	= status;
+	else if(flag == 3)	data.pc			= status;
+	else if(flag == 4)	data.mobile 	= status;
+	else if(flag == 5)	data.order 		= status;
+	$.ajax({
+		type:"post",
+		url:"<{:U('settop')}>",
+		data:data,
+		success:function(res){
+			console.log(res);
+		}
+	});
+}
+</script>
+</body>
+</html>

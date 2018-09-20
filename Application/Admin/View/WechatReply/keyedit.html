@@ -1,0 +1,336 @@
+<include file="Public/header" />
+<!--<link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader/webuploader.min.css"/>
+<script src="__PUBLIC__/webuploader/webuploader.js"></script>
+<script src="__PUBLIC__/webuploader/uploadImgPreview.min.js"></script>-->
+<link rel="stylesheet" href="__PUBLIC__/zTreeStyle/zTreeStyle.css">
+<style type="text/css">
+	.logo-icon {
+		float: left;
+		width: 60px;
+		height: 50px;
+		border: 1px solid #ccc;
+	}
+	
+	._filelist li,
+	.attachlist li {
+		/*这个选择器一定要有宽高，否则图片显示不出来，因为它里面的内容是绝对定位的*/
+		width: 180px;
+		height: 160px;
+	}
+	
+	#select_attach {
+		width: 100px;
+		display: block;
+		height: 41.5px;
+		line-height: 41.5px;
+		border-radius: 7px;
+	}
+	
+	.button-uploas>div {
+		float: left;
+	}
+	
+	.attach-img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -50px;
+		margin-left: -50px;
+	}
+	
+	.attach-txt {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0px;
+		cursor: default;
+		margin-top: -24px;
+	}
+</style>
+
+<body>
+	<div class="panel admin-panel">
+		<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>
+  	<if condition="$status eq 1">增加<else />修改</if>内容</strong></div>
+		<div class="body-content">
+			<form method="post" id="myform" class="form-x" action="<{:U('wechatReply/keyedit',['status'=>$status,'id'=>$id])}>" enctype="multipart/form-data">
+				<div class="form-group">
+					<div class="label">
+						<label>公众号：</label>
+					</div>
+					<div class="field">
+						<select name="token" class="input w50">
+							<option value="">请选择公众号</option>
+							<volist name="list" id="v">
+								<option value="<{$v.token}>" <if condition="$info['token'] eq $v['token']">selected</if>>
+									<{$v.name}>
+								</option>
+							</volist>
+						</select>
+						<div class="tips-thishi">*</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>回复类型：</label>
+					</div>
+					<div class="field">
+						<select name="replytype" class="input w50" id="catse">
+							<option value="">请选择分类</option>
+							<option value="1" <if condition="$info['replytype'] eq 1">selected</if>>图文</option>
+							<option value="2" <if condition="$info['replytype'] eq 2">selected</if>>文本</option>
+							<!--<option value="3" <if condition="$info['catid'] eq $vo['id']">selected</if>>图片</option>
+	      		<option value="4" <if condition="$info['catid'] eq $vo['id']">selected</if>>音频</option>
+	      		<option value="5" <if condition="$info['catid'] eq $vo['id']">selected</if>>视频</option>-->
+						</select>
+						<div class="tips-thishi">*</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>关键字：</label>
+					</div>
+					<div class="field">
+						<input type="text" class="input w50" id="titles" value="<{$info.keyword}>" name="keyword" placeholder="请输入关键字" data-validate="required:请输入关键字" />
+						<div class="tips"></div>
+					</div>
+				</div>
+				<div class="select-info">
+					<div class="form-group" style="display: <if condition=" $info[ 'replytype'] eq 1 ">block;<else />none;</if>">
+						<div class="label">
+							<label>图文：</label>
+						</div>
+						<div class="field">
+							<ul id="treeDemo" class="ztree select"></ul>
+							<div class="tips"></div>
+						</div>
+					</div>
+					<div class="form-group" style="display: <if condition=" $info[ 'replytype'] eq 2 ">block;<else />none;</if>">
+						<div class="label">
+							<label>文本：</label>
+						</div>
+						<div class="field padding-large-bottom">
+							<textarea class="input w50" id="conts" name="text" style="height:90px;"><{$info.text}></textarea>
+							<div id="emotion"></div>
+							<div class="tips"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label>启用：</label>
+					</div>
+					<div class="field">
+						<div class="bootstrap-switch bootstrap-switch-large">
+							<if condition="$status eq 1">
+								<input type="checkbox" name="isenable" value="1" checked/>
+								<else />
+								<input type="checkbox" name="isenable" value="<{$info.isenable}>" <if condition="$info['isenable'] eq 1">checked</if>/>
+							</if>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<button class="button bg-main icon-check-square-o" type="button" id="btn"> 提交</button>
+						<button class="button bg-red icon-mail-reply" type="button" onclick="history.back()"> 撤销</button>
+					</div>
+				</div>
+				<input type="hidden" name="id" value="<{$info.id}>" />
+				<input type="hidden" name="aid" id="aid" value="<{$info.aid}>" />
+				<input type="hidden" name="tablename" id="tablename" value="<{$info.tablename}>" />
+				<input type="hidden" name="type" value="2" />
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/zTreeStyle/jquery.ztree.core.js"></script>
+	<script src="__PUBLIC__/zTreeStyle/jquery.ztree.excheck.js"></script>
+	<include file="Public/emoji" />
+	<script>
+		$(function() {
+			var data = '<if condition="!empty($info)"><{$info|json_encode=###}></if>';
+			if(data) {
+				data = eval("(" + data + ")");
+			}
+			trees(data);
+			$('.radio label').each(function() {
+				var e = $(this);
+				e.click(function() {
+					e.closest('.radio').find("label").removeClass("active");
+					e.addClass("active");
+				});
+			});
+			//选择发送类型
+			$("#catse").change(function() {
+				$(".select-info > div").hide();
+				if($(this).val() == 1) {
+					$(".select-info > div").eq(0).show();
+				} else if($(this).val() == 2) {
+					$(".select-info > div").eq(1).show();
+				} else {
+					$(".select-info > div").hide();
+				}
+			});
+			//checkbox选择状态
+			//$("input[type='checkbox']").bootstrapSwitch('toggleState',true)
+			$("input[type='checkbox']").bootstrapSwitch({
+				onSwitchChange: function(e, state) {
+					console.log(this)
+					console.log(state);
+					state == true ? $(this).val(1) : $(this).val(0);
+				}
+			});
+
+			$("#btn").click(function() {
+				//判断是否是选择了图文
+				if($(".select-info>div:first-child").css("display") == "block" && $("#catse").val() == 1) {
+					//获取选中的值
+					var tree = $.fn.zTree.getZTreeObj("treeDemo");
+					var nodes = tree.getCheckedNodes(true);
+					var nleng = nodes.length;
+					//默认情况是获取第一个节点的id
+					var catid = nodes[0].id;
+					var table = nodes[0].table;
+					if(nodes == 0) {
+						errors("至少选择一项");
+						return;
+					}
+					//节点长度大于等于2时，获取最后一个节点id
+					if(nleng >= 2) {
+						catid = nodes[nleng - 1].id;
+						table = nodes[nleng - 1].table;
+					}
+					$("#aid").val(catid);
+					$("#tablename").val(table);
+				}
+				$("#myform").submit();
+			});
+		});
+
+		/*树形结构*/
+		/*var zNodes =[
+				{ id:1, pId:0, name:"父节点1", title:"",children:[
+					{id:2,pId:0,name:"zijie"},{id:2,pId:0,name:"zijie"}
+					]},
+				{ id:12, pId:0, name:"父节点12", title:"", children:[
+					{id:2,pId:12,name:"zijie"},{id:2,pId:0,name:"zijie"},
+					{id:2,pId:12,name:"zijie"},{id:2,pId:0,name:"zijie"}
+				]}
+			];
+		*/
+		//显示树操作
+		function trees(info) {
+			//节点树操作
+			var setting = {
+				check: {
+					enable: true,
+					chkStyle: "radio"
+				},
+				data: {
+					key: {
+						title: "name"
+					},
+					simpleData: {
+						enable: true
+					}
+				},
+				callback: {
+					onCheck: onCheck
+				}
+			};
+			$.ajax({
+				type: "post",
+				url: "<{:U('wechat/article')}>",
+				async: true,
+				success: function(data) {
+					var znode = "[",
+						art = data[0],
+						cat = data[1],
+						artlen = art.length,
+						catlen = cat.length;
+					if(info) {
+						console.log(info);
+						for(var i = 0; i < catlen; i++) {
+							if(info.aid == cat[i].id && (info.tablename == cat[i].table || info.tablename == 'article')) {
+								znode += "{id:" + cat[i].id + ",pId:" + cat[i].pid + ",name:'" + cat[i].name + "',table:'" + cat[i].table + "',checked:true,open:true,children:[";
+							} else {
+								znode += "{id:" + cat[i].id + ",pId:" + cat[i].pid + ",name:'" + cat[i].name + "',table:'" + cat[i].table + "',children:[";
+							}
+
+							//znode+="{id:"+cat[i].id+",pId:"+cat[i].pid+",name:'"+cat[i].name+"',table:'"+cat[i].table+"',children:[";
+							for(var j = 0; j < artlen; j++) {
+								if(art[j].catid == cat[i].id) {
+									if(info.aid == art[j].id && info.tablename == art[j].table) {
+										znode += "{id:" + art[j].id + ",pId:" + art[j].catid + ",name:'" + art[j].name + "',checked:true,open:true,table:'" + art[j].table + "'},";
+									} else {
+										znode += "{id:" + art[j].id + ",pId:" + art[j].catid + ",name:'" + art[j].name + "',table:'" + art[j].table + "'},";
+									}
+								}
+							}
+							znode += "]},";
+						}
+					} else {
+						for(var i = 0; i < catlen; i++) {
+							znode += "{id:" + cat[i].id + ",pId:" + cat[i].pid + ",name:'" + cat[i].name + "',table:'" + cat[i].table + "',children:[";
+							for(var j = 0; j < artlen; j++) {
+								if(art[j].catid == cat[i].id) {
+									znode += "{id:" + art[j].id + ",pId:" + art[j].catid + ",name:'" + art[j].name + "',table:'" + art[j].table + "'},";
+								}
+							}
+							znode += "]},";
+						}
+					}
+					znode = znode.substring(0, znode.length - 1);
+					znode += "]";
+					znode = eval(znode);
+
+					$.fn.zTree.init($("#treeDemo"), setting, znode);
+					setTitle();
+					count();
+				}
+			});
+		}
+
+		function onCheck(e, treeId, treeNode) {
+			count();
+		}
+
+		function setTitle(node) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			var nodes = node ? [node] : zTree.transformToArray(zTree.getNodes());
+			for(var i = 0, l = nodes.length; i < l; i++) {
+				var n = nodes[i];
+				n.title = "[" + n.id + "] isFirstNode = " + n.isFirstNode + ", isLastNode = " + n.isLastNode;
+				zTree.updateNode(n);
+			}
+		}
+
+		function count() {
+			function isForceHidden(node) {
+				if(!node.parentTId) return false;
+				var p = node.getParentNode();
+				return !!p.isHidden ? true : isForceHidden(p);
+			}
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+				checkCount = zTree.getCheckedNodes(true).length,
+				nocheckCount = zTree.getCheckedNodes(false).length,
+				hiddenNodes = zTree.getNodesByParam("isHidden", true),
+				hiddenCount = hiddenNodes.length;
+
+			for(var i = 0, j = hiddenNodes.length; i < j; i++) {
+				var n = hiddenNodes[i];
+				if(isForceHidden(n)) {
+					hiddenCount -= 1;
+				} else if(n.isParent) {
+					hiddenCount += zTree.transformToArray(n.children).length;
+				}
+			}
+		}
+		/*树形结构 end*/
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-sm-12">
+		<h1 class="blog-text-center">-- 存档 --</h1>
+		<div class="timeline-year">
+			<foreach name="doc" item="v" key="k">
+			<ul>
+				<h3><{$k}></h3>
+				<hr>
+				<volist name="v" id="vo">
+					<eq name="vo['time']" value="$k">
+					<li class="am-g">
+						<span class="am-u-sm-4 am-u-md-2 timeline-span"><{$vo.ptime}></span>
+						<span class="am-u-sm-8 am-u-md-6 blog-line-clamp-1"><a href="<{:getArticleUrl($vo['catid'],$vo['id'],2)}>"><{$vo.name}></a></span>
+						<span class="am-u-md-2 am-hide-sm-only"><{$vo.catename}></span>
+						<span class="am-u-md-2 am-hide-sm-only"><{$vo.editor}></span>
+					</li>
+					</eq>
+				</volist>
+			</ul>
+			</foreach>
+		</div>
+	</div>
+</div>
+<!-- content end -->

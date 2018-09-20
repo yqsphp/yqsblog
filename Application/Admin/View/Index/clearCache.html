@@ -1,0 +1,63 @@
+<include file="Public/header"/>
+<body>
+<div class="panel admin-panel">
+	<div class="panel-head">
+		<strong class="icon-reorder"> 缓存列表</strong>
+	</div>
+	<table class="table table-hover text-center">
+		<tr>
+			<volist name="info" id="v">
+				<switch name="key">
+					<case value="Cache"><th width="10%">编译缓存（<{$key}>）</th></case>
+					<case value="Logs"><th width="10%">日志缓存（<{$key}>）</th></case>
+					<case value="Data"><th width="10%">数据缓存（<{$key}>）</th></case>
+					<case value="lite"><th width="10%">配置缓存（<{$key}>）</th></case>
+					<case value="Temp"><th width="30%">临时缓存（<{$key}>）</th></case>
+					<case value="Html"><th width="30%">静态缓存（<{$key}>）</th></case>
+				</switch>
+			</volist>
+		</tr>
+		<tr>
+			<volist name="info" id="v">
+			<td class="border-right">
+				<span class="hidden"><{$k = $key}></span>
+				<if condition="$v eq 'lite.php'">
+					<span class="float-left"><{$v}></span> 
+					<a class="button border-red delete float-right" href="<{:U('clearCache',['dir'=>$v])}>">
+						<span class="icon-trash-o"></span> 删除
+					</a>
+				<elseif condition="$key eq 'Temp'" />
+					<volist name="v" id="vo">
+						<p>
+							<span class="float-left"><{$vo}></span> 
+							<a class="button border-red delete float-right" href="<{:U('clearCache',['dir'=>$k.'_'.$vo])}>">
+								<span class="icon-trash-o"></span> 删除
+							</a>
+							<div class="clear border-bottom"></div>
+						</p>
+					</volist>
+				<else />
+					<volist name="v" id="vo">
+						<p>
+							<span class="float-left"><{$key}></span> 
+							<a class="button border-red delete float-right" href="<{:U('clearCache',['dir'=>$k.'_'.$key])}>">
+								<span class="icon-trash-o"></span> 删除</a>
+							<div class="clear border-bottom"></div>
+						</p>
+					</volist>
+				</if>
+			</td>
+			</volist>
+		</tr>
+		<tr>
+			<volist name="info" id="v">
+			<td>
+				<a class="button border-red delete" href="<{:U('clearCache',['dir'=>$key])}>">
+					<span class="icon-trash-o"></span> 全部删除</a>
+			</td>
+			</volist>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

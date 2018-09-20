@@ -1,0 +1,225 @@
+<include file="Public/header"/>
+<style>
+body{font-size:14px;color:#333;background:#fff;font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;}
+	a:hover{text-decoration: none;}
+	.admin-panel{border:1px solid #ccc}
+	.cursor{cursor: pointer; color: deepskyblue;}
+	.currhide{display: none;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".cursor").toggle(function(){
+		var that = $(this);
+		that.removeClass("icon-plus-square-o").addClass("icon-minus-square-o");
+		var id   = that.attr("id");
+		console.log(id,1);
+		current(id,1);
+	},function(){
+		var that = $(this);
+		that.removeClass("icon-minus-square-o").addClass("icon-plus-square-o");
+		var id   = that.attr("id");
+		current(id,0);
+	});
+});
+//显示隐藏结构 status:1显示，0,隐藏
+function current(id,status){
+	$("tr.code").each(function(i,o){
+		if($(o).attr("pid") == id){
+			console.log($(o).attr("pid"));
+			if(status == 1){
+				$(o).show();				
+			}else{
+				$(o).hide();
+			}
+		}
+	});
+}
+</script>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head"><strong class="icon-reorder"> 权限列表</strong></div>
+  <if condition="$third['auth_add'] eq 1">
+  <div class="padding border-bottom">
+    <button class="button border-main" onclick="ruleadd()">
+    	<span class="icon-plus-square-o"></span> 添加权限</button>
+  </div>
+  </if>
+  <table class="table table-hover text-center" id="tree_table">
+    <thead>
+    <tr>
+      <th width="5%">权限ID</th>
+      <th width="10%" style="text-align: left;">名称</th>
+      <th width="10%">权限</th>
+      <th width="5%">权限等级</th>
+      <th width="5%">显示状态</th>
+      <th width="20%">操作</th>
+    </tr>
+   </thead>
+    <volist name="tree" id="v">
+    <tr data-tt-id="<{$v.id}>" data-tt-parent-id="<{$v.pid}>" class="code <if condition="$v['_level'] eq 3 || $v['_level'] eq 2">currhide</if>" id="<{$v.id}>" pid="<{$v.pid}>">
+      <td style="vertical-align: middle;"><{$v.id}></td>
+      <td style="text-align: left;vertical-align: middle;">
+      	<if condition="$v['_level'] neq 1">&emsp;</if>
+      	<if condition="$v['_level'] neq 3">
+      		<i class="icon icon-plus-square-o cursor" id="<{$v.id}>"></i> 
+      	</if>
+      	<{$v._name}>
+      </td>
+      <td style="vertical-align: middle;"><{$v.name}></td>
+      <td style="vertical-align: middle;"><{$v._level}></td>
+      <td style="vertical-align: middle;">
+      	<font color="#00CC99">
+      	<if condition="$v['status'] eq 1">
+      		<span class="icon icon-unlock"></span>
+      	<else />
+      		<span class="icon icon-lock"></span>
+      	</if>
+      	</font>
+      </td>
+      <td>
+      	<div class="button-group"> 
+      		<if condition="$third['auth_add'] eq 1">
+      		<a class="button border-main" href="javascript:void(0)"
+      			 onclick="ruleedit('',<{$v.id}>)">
+      			<span class="icon-plus-square-o"></span> 添加子菜单</a>
+      		</if>
+      		<if condition="$third['auth_edit'] eq 1">
+      		<a class="button border-main" href="javascript:void(0)"
+      			 onclick="ruleedit(<{$v.id}>,<{$v.pid}>,'<{$v.title}>','<{$v.name}>',<{$v.status}>,<{$v.condition}>)">
+      			<span class="icon-edit"></span> 修改</a> 
+			</if>
+			<if condition="$third['auth_delete'] eq 1">
+			<a class="button border-red" href="javascript:void(0)" 
+  				onclick="del(<{$v.id}>)">
+				<span class="icon-trash-o"></span> 删除</a> 
+			</if>
+      	</div>
+      </td>
+    </tr>
+    </volist>
+  </table>
+</div>
+<!--弹出层添加编辑权限-->
+<div class="modal fade" id="ruleedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		 <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					添加权限
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form id="formeidt" action="<{:U('Rule/ruleedit')}>" method="post">
+					<input type="hidden" name="pid" class="pid">
+					<input type="hidden" name="id" class="id">
+					<input type="hidden" name="type" value="1" class="type">
+					<table class="table table-hover text-center" style="border: 1px solid #ccc;">
+						<tr id="menuss" style="display: none;">
+							<td width="20%">上级菜单：</td>
+							<td>
+								<div class="field">
+						          <select name="pid" class="input w50 group" style="width: 35%;">
+						          	<option value="">请选择用户组</option>
+						          	<volist name="tree" id="vo">
+						          		<if condition="$vo['_level'] neq 3">
+						          		<option value="<{$vo.id}>">
+						          			<{$vo._name}>
+						          		</option>
+						          		</if>
+						          	</volist>
+						          </select> 
+						          &nbsp;<font color="red" style="float: left; line-height: 42px;">不选默认为顶级菜单</font>
+        					</div>
+							</td>
+						</tr>
+						<tr>
+							<td width="20%">权限名：</td>
+							<td>
+								<input class="form-control title" type="text" name="title">
+							</td>
+						</tr>
+						<tr>
+							<td>权限：</td>
+							<td>
+								<input class="form-control name" type="text" name="name" > 
+								<font color="red">模型/控制器/方法 如 Admin/Rule/index</font>
+							</td>
+						</tr>
+						<tr>
+							<td>三级操作：</td>
+							<td align="left">
+								<label class="radio-inline"><input class="condition" type="radio" name="condition" value="1"> 添加</label>
+								<label class="radio-inline"><input class="condition" type="radio" name="condition" value="2"> 编辑</label>
+								<label class="radio-inline"><input class="condition" type="radio" name="condition" value="3"> 查看</label>
+								<label class="radio-inline"><input class="condition" type="radio" name="condition" value="4"> 还原</label>
+								<label class="radio-inline"><input class="condition" type="radio" name="condition" value="5"> 删除</label>
+								<div><font color="red">三级菜单操作时选择</font></div>
+							</td>
+						</tr>
+						<tr>
+							<td>启用：</td>
+							<td align="left" style="height:20px;">
+								<input type="checkbox" class="statustype" name="status">启用
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+							<button class="button border-main submitdata icon-plus-square-o" type="submit">
+      			 添加</button> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层添加编辑权限over-->
+<script src="__PUBLIC__/js/jquery.treetable.js"></script>
+<script type="text/javascript">
+
+function del(id){
+	function del4(){
+		location.href="__CONTROLLER__/ruledel/id/"+id;
+	}
+	warning(del4);
+}
+function catedit(status,id){
+	location.href="__CONTROLLER__/catedit/status/"+status+"/id/"+id;
+}
+function ruleedit(id,pid,title,name,status,condition){
+	$(".pid").val(pid);
+	$("#menuss").remove();
+	var check=$(".statustype");
+	if(!id){//添加
+		$(".form-control").val('');
+		check.attr('checked','checked');
+		$(".submitdata").removeClass('icon-edit').addClass('icon-plus-square-o').html(' 添加');
+		$(".type").val(1);
+	}else{//编辑
+		$(".id").val(id);
+		if(status==1){
+			check.attr('checked','checked');
+		}
+		$(".condition").each(function(){
+			if($(this).val() == condition){
+				$(this).attr("checked",true);
+			}
+		});
+		$(".type").val(2);
+		$(".submitdata").removeClass('icon-plus-square-o').addClass('icon-edit').html(' 修改');
+		$(".title").val(title);
+		$(".name").val(name);
+	}
+	$("#ruleedit").modal('show');
+}
+function ruleadd(){
+	$(".pid").remove();
+	$("#menuss").show();
+	$("#ruleedit").modal('show');
+}
+</script>
+</body>
+</html>

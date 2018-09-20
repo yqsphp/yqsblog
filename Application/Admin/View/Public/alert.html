@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="__PUBLIC__/admin/css/sweetalert.css">
+<!--alert弹窗主题-->
+<!--<link rel="stylesheet" href="__PUBLIC__/admin/css/themes/twitter/twitter.css">-->
+<!--<link href="__PUBLIC__/admin/css/themes/google/google.css" rel="stylesheet"/>-->
+<!--<link href="__PUBLIC__/admin/css/themes/facebook/facebook.css" rel="stylesheet"/>-->
+<script src="__PUBLIC__/admin/js/sweetalert.min.js"></script> 
+<script>
+function success(title){
+	swal({
+		title:title,	//标题
+		type:'success', 
+		timer:2000,
+	});
+}
+function errors(title){
+	swal({
+		title:title,	//标题
+		type:'error', 
+		timer:2000,
+	});
+}
+//fun : 函数
+function warning(fun,title){
+	if(!title) title='确定删除吗?';
+	swal({
+	  title: title,
+	  type: "warning",
+	  showCancelButton: true,
+	  cancelButtonText:'取消',
+	  confirmButtonText: "确定",
+	  //closeOnConfirm: true
+	},function(isconfirm){
+		if(isconfirm){
+			fun();
+		}
+	})
+}
+//加载弹窗
+function loading(){
+	swal({
+		title: "请稍后...",
+		type: "",
+		imageUrl:"__PUBLIC__/admin/images/ajaxload.gif",
+		showConfirmButton:false
+	})
+}
+</script>

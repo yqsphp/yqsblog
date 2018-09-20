@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="__PUBLIC__/syntaxhighlighter3/styles/shCore.css"/>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shCore.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCSharp.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushPhp.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushJScript.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushJava.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushVb.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushSql.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushXml.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushDelphi.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushPython.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushRuby.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCss.js"></script>
+<script src="__PUBLIC__/syntaxhighlighter3/scripts/shBrushCpp.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/syntaxhighlighter3/styles/shCoreDefault.css"/>
+<script type="text/javascript">
+$(function(){
+	//SyntaxHighlighter.config.clipboardSwf = '__PUBLIC__/syntaxhighlighter3/scripts/clipboard.swf';
+	SyntaxHighlighter.all();
+})
+</script>
+
+在需要的页面中引入
